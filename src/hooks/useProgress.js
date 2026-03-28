@@ -66,13 +66,12 @@ export function useProgress() {
   }, []);
 
   const resetAll = useCallback(() => {
-    const fresh = loadProgress();
     localStorage.removeItem("ai-tracker-progress");
     const def = {
       completed: Object.fromEntries(
         Array.from({ length: 8 }, (_, i) => [
           String(i + 1),
-          { audio: false, mindmap: false, flashcards: false, quiz: false, teachback: false },
+          { audio: false, deck: false, flashcards: false, quiz: false, teachback: false },
         ])
       ),
       notes: {},
