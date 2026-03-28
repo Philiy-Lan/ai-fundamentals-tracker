@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { MODULES, PHASES } from "../data/modules";
-import { ActivityCheckbox } from "../components/ActivityCheckbox";
+import { ActivityPanel } from "../components/ActivityPanel";
 import { NotebookLMButton } from "../components/NotebookLMButton";
 import { CelebrationOverlay } from "../components/CelebrationOverlay";
 import { ModuleComplete } from "../components/ModuleComplete";
@@ -25,6 +25,7 @@ export function ModuleDetail({ progress }) {
   } = progress;
   const [celebrateMilestone, setCelebrateMilestone] = useState(null);
   const [showModuleComplete, setShowModuleComplete] = useState(false);
+  const [openActivityId, setOpenActivityId] = useState(null);
   const prevPercent = useRef(overallPercent);
   const notesTimerRef = useRef(null);
 
@@ -74,6 +75,10 @@ export function ModuleDetail({ progress }) {
     },
     [module, state.completed, toggleActivity]
   );
+
+  const handlePanelToggle = useCallback((activityId) => {
+    setOpenActivityId((prev) => (prev === activityId ? null : activityId))
+  }, [])
 
   // Debounced notes save
   const handleNotesChange = useCallback(
@@ -204,11 +209,14 @@ export function ModuleDetail({ progress }) {
         <div className="px-5 pb-5">
           <div className="space-y-1.5">
             {module.activities.map((activity) => (
-              <ActivityCheckbox
+              <ActivityPanel
                 key={activity.id}
                 activity={activity}
+                moduleId={String(module.id)}
                 checked={!!modCompleted[activity.id]}
-                onToggle={() => handleToggle(activity.id)}
+                isOpen={openActivityId === activity.id}
+                onPanelToggle={handlePanelToggle}
+                onComplete={() => handleToggle(activity.id)}
                 phaseColor={phase?.color}
               />
             ))}
