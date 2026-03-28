@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 01-foundation 01-04-PLAN.md
-last_updated: "2026-03-28T20:28:21.112Z"
+stopped_at: Completed 01-foundation 01-01-PLAN.md
+last_updated: "2026-03-28T20:28:25.655Z"
 progress:
   total_phases: 4
   completed_phases: 0
@@ -65,6 +65,7 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: Content data keyed by string module ID ('1'-'8') for consistent object key access in content scaffold files
 - [Phase 01]: ActivityPanel uses separate onPanelToggle and onComplete callbacks — tap opens panel, completion is triggered by Phase 2+ content components
 - [Phase 01]: ModuleDetail owns openActivityId state for single-panel-open constraint using functional setState
+- [Phase 01-foundation]: Vitest globals: true to avoid per-file imports; dynamic import with vi.resetModules() for localStorage isolation
 
 ### Pending Todos
 
@@ -77,6 +78,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T20:28:11.397Z
-Stopped at: Completed 01-foundation 01-04-PLAN.md
+Last session: 2026-03-28T20:28:25.654Z
+Stopped at: Completed 01-foundation 01-01-PLAN.md
 Resume file: None
