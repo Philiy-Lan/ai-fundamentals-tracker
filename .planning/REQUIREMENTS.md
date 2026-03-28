@@ -18,9 +18,9 @@
 
 - [ ] **DATA-01**: Rename "Mind Map" activity to "Deck" across modules.js, storage.js, useProgress.js
 - [ ] **DATA-02**: Migrate existing localStorage progress data from mindmap → deck keys
-- [ ] **DATA-03**: Create content data structures for flashcards (JSON per module with question/answer pairs)
-- [ ] **DATA-04**: Create content data structures for quizzes (JSON per module with questions, options, correct answer)
-- [ ] **DATA-05**: Create content data structures for Teach-Back prompts (concept explanation prompts per module)
+- [x] **DATA-03**: Create content data structures for flashcards (JSON per module with question/answer pairs)
+- [x] **DATA-04**: Create content data structures for quizzes (JSON per module with questions, options, correct answer)
+- [x] **DATA-05**: Create content data structures for Teach-Back prompts (concept explanation prompts per module)
 
 ### Activity Panel
 
@@ -75,7 +75,7 @@
 
 ### PWA / Offline
 
-- [ ] **PWA-01**: Service worker updated with Workbox runtimeCaching for audio files (CacheFirst strategy)
+- [x] **PWA-01**: Service worker updated with Workbox runtimeCaching for audio files (CacheFirst strategy)
 - [ ] **PWA-02**: All non-audio content (images, JSON) included in precache manifest
 - [ ] **PWA-03**: Audio files cached on first play, available offline thereafter
 
@@ -132,9 +132,9 @@
 | CONT-06 | Phase 3 | Pending |
 | DATA-01 | Phase 1 | Pending |
 | DATA-02 | Phase 1 | Pending |
-| DATA-03 | Phase 1 | Pending |
-| DATA-04 | Phase 1 | Pending |
-| DATA-05 | Phase 1 | Pending |
+| DATA-03 | Phase 1 | Complete |
+| DATA-04 | Phase 1 | Complete |
+| DATA-05 | Phase 1 | Complete |
 | PANEL-01 | Phase 1 | Pending |
 | PANEL-02 | Phase 1 | Pending |
 | PANEL-03 | Phase 1 | Pending |
@@ -168,7 +168,7 @@
 | TEACH-06 | Phase 4 | Pending |
 | TEACH-07 | Phase 4 | Pending |
 | TEACH-08 | Phase 4 | Pending |
-| PWA-01 | Phase 1 | Pending |
+| PWA-01 | Phase 1 | Complete |
 | PWA-02 | Phase 3 | Pending |
 | PWA-03 | Phase 2 | Pending |
 

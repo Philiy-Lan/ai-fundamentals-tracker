@@ -2,16 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: planning
-stopped_at: Phase 1 planned
-last_updated: "2026-03-28T20:19:13.381Z"
-last_activity: 2026-03-28 — Roadmap created, ready to plan Phase 1
+status: unknown
+stopped_at: Completed 01-foundation 01-04-PLAN.md
+last_updated: "2026-03-28T20:28:21.112Z"
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 4
-  completed_plans: 0
-  percent: 0
+  completed_plans: 3
 ---
 
 # Project State
@@ -21,16 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Every learning activity is accessible and completable inside the app — no switching between tools.
-**Current focus:** Phase 1 — Foundation
+**Current focus:** Phase 01 — foundation
 
 ## Current Position
 
-Phase: 1 of 4 (Foundation)
-Plan: 0 of ? in current phase
-Status: Ready to plan
-Last activity: 2026-03-28 — Roadmap created, ready to plan Phase 1
-
-Progress: [░░░░░░░░░░] 0%
+Phase: 01 (foundation) — EXECUTING
+Plan: 4 of 4
 
 ## Performance Metrics
 
@@ -52,6 +46,9 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 01-foundation P04 | 4 | 2 tasks | 9 files |
+| Phase 01 P03 | 120 | 2 tasks | 3 files |
+| Phase 01-foundation P01 | 3 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -64,6 +61,10 @@ Recent decisions affecting current work:
 - Pre-roadmap: Claude API for Teach-Back — direct integration
 - Pre-roadmap: Extract content via NotebookLM MCP tools — automated over manual export
 - Pre-roadmap: Rename Mind Map → Deck — user stopped using mind maps
+- [Phase 01-foundation]: CacheFirst for audio: serves cached audio on repeat plays without re-fetching, maxEntries:10 prevents unbounded cache growth
+- [Phase 01-foundation]: Content data keyed by string module ID ('1'-'8') for consistent object key access in content scaffold files
+- [Phase 01]: ActivityPanel uses separate onPanelToggle and onComplete callbacks — tap opens panel, completion is triggered by Phase 2+ content components
+- [Phase 01]: ModuleDetail owns openActivityId state for single-panel-open constraint using functional setState
 
 ### Pending Todos
 
@@ -76,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T20:19:13.377Z
-Stopped at: Phase 1 planned
-Resume file: .planning/phases/01-foundation/01-01-PLAN.md
+Last session: 2026-03-28T20:28:11.397Z
+Stopped at: Completed 01-foundation 01-04-PLAN.md
+Resume file: None
