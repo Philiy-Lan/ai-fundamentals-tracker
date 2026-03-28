@@ -124,59 +124,61 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CONT-01 | TBD | Pending |
-| CONT-02 | TBD | Pending |
-| CONT-03 | TBD | Pending |
-| CONT-04 | TBD | Pending |
-| CONT-05 | TBD | Pending |
-| CONT-06 | TBD | Pending |
-| DATA-01 | TBD | Pending |
-| DATA-02 | TBD | Pending |
-| DATA-03 | TBD | Pending |
-| DATA-04 | TBD | Pending |
-| DATA-05 | TBD | Pending |
-| PANEL-01 | TBD | Pending |
-| PANEL-02 | TBD | Pending |
-| PANEL-03 | TBD | Pending |
-| AUDIO-01 | TBD | Pending |
-| AUDIO-02 | TBD | Pending |
-| AUDIO-03 | TBD | Pending |
-| AUDIO-04 | TBD | Pending |
-| AUDIO-05 | TBD | Pending |
-| DECK-01 | TBD | Pending |
-| DECK-02 | TBD | Pending |
-| DECK-03 | TBD | Pending |
-| DECK-04 | TBD | Pending |
-| DECK-05 | TBD | Pending |
-| FLASH-01 | TBD | Pending |
-| FLASH-02 | TBD | Pending |
-| FLASH-03 | TBD | Pending |
-| FLASH-04 | TBD | Pending |
-| FLASH-05 | TBD | Pending |
-| FLASH-06 | TBD | Pending |
-| QUIZ-01 | TBD | Pending |
-| QUIZ-02 | TBD | Pending |
-| QUIZ-03 | TBD | Pending |
-| QUIZ-04 | TBD | Pending |
-| QUIZ-05 | TBD | Pending |
-| QUIZ-06 | TBD | Pending |
-| TEACH-01 | TBD | Pending |
-| TEACH-02 | TBD | Pending |
-| TEACH-03 | TBD | Pending |
-| TEACH-04 | TBD | Pending |
-| TEACH-05 | TBD | Pending |
-| TEACH-06 | TBD | Pending |
-| TEACH-07 | TBD | Pending |
-| TEACH-08 | TBD | Pending |
-| PWA-01 | TBD | Pending |
-| PWA-02 | TBD | Pending |
-| PWA-03 | TBD | Pending |
+| CONT-01 | Phase 2 | Pending |
+| CONT-02 | Phase 2 | Pending |
+| CONT-03 | Phase 3 | Pending |
+| CONT-04 | Phase 3 | Pending |
+| CONT-05 | Phase 3 | Pending |
+| CONT-06 | Phase 3 | Pending |
+| DATA-01 | Phase 1 | Pending |
+| DATA-02 | Phase 1 | Pending |
+| DATA-03 | Phase 1 | Pending |
+| DATA-04 | Phase 1 | Pending |
+| DATA-05 | Phase 1 | Pending |
+| PANEL-01 | Phase 1 | Pending |
+| PANEL-02 | Phase 1 | Pending |
+| PANEL-03 | Phase 1 | Pending |
+| AUDIO-01 | Phase 2 | Pending |
+| AUDIO-02 | Phase 2 | Pending |
+| AUDIO-03 | Phase 2 | Pending |
+| AUDIO-04 | Phase 2 | Pending |
+| AUDIO-05 | Phase 2 | Pending |
+| DECK-01 | Phase 2 | Pending |
+| DECK-02 | Phase 2 | Pending |
+| DECK-03 | Phase 2 | Pending |
+| DECK-04 | Phase 2 | Pending |
+| DECK-05 | Phase 2 | Pending |
+| FLASH-01 | Phase 3 | Pending |
+| FLASH-02 | Phase 3 | Pending |
+| FLASH-03 | Phase 3 | Pending |
+| FLASH-04 | Phase 3 | Pending |
+| FLASH-05 | Phase 3 | Pending |
+| FLASH-06 | Phase 3 | Pending |
+| QUIZ-01 | Phase 3 | Pending |
+| QUIZ-02 | Phase 3 | Pending |
+| QUIZ-03 | Phase 3 | Pending |
+| QUIZ-04 | Phase 3 | Pending |
+| QUIZ-05 | Phase 3 | Pending |
+| QUIZ-06 | Phase 3 | Pending |
+| TEACH-01 | Phase 4 | Pending |
+| TEACH-02 | Phase 4 | Pending |
+| TEACH-03 | Phase 4 | Pending |
+| TEACH-04 | Phase 4 | Pending |
+| TEACH-05 | Phase 4 | Pending |
+| TEACH-06 | Phase 4 | Pending |
+| TEACH-07 | Phase 4 | Pending |
+| TEACH-08 | Phase 4 | Pending |
+| PWA-01 | Phase 1 | Pending |
+| PWA-02 | Phase 3 | Pending |
+| PWA-03 | Phase 2 | Pending |
 
 **Coverage:**
-- v1 requirements: 43 total
-- Mapped to phases: 0
-- Unmapped: 43 (pending roadmap creation)
+- v1 requirements: 47 total
+- Mapped to phases: 47
+- Unmapped: 0
+
+Note: Original count of 43 in this file was incorrect. Actual count is 47 (verified by enumeration).
 
 ---
 *Requirements defined: 2026-03-28*
-*Last updated: 2026-03-28 after initial definition*
+*Last updated: 2026-03-28 after roadmap creation*
