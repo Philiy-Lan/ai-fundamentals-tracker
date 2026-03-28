@@ -119,6 +119,24 @@ export function useSync(state, setState) {
 }
 
 /**
+ * One-time migration helper: normalizes mindmap → deck in any progress object.
+ * Called on remote data during sync pull to prevent mindmap key from re-entering localStorage.
+ */
+export function normalizeMindmapToDeck(progressObj) {
+  if (!progressObj?.completed) return progressObj;
+  const normalized = { ...progressObj, completed: { ...progressObj.completed } };
+  Object.keys(normalized.completed).forEach((modId) => {
+    const mod = { ...normalized.completed[modId] };
+    if ("mindmap" in mod) {
+      mod.deck = mod.mindmap;
+      delete mod.mindmap;
+    }
+    normalized.completed[modId] = mod;
+  });
+  return normalized;
+}
+
+/**
  * Merge local and remote progress.
  * Strategy: for each module/activity, prefer "completed" (true wins).
  * For streak, take the higher current streak.
@@ -126,18 +144,19 @@ export function useSync(state, setState) {
  * For milestones, union the arrays.
  */
 function mergeProgress(local, remote) {
+  const normalizedRemote = normalizeMindmapToDeck(remote);
   const merged = { ...local };
 
   // Merge completed activities (true wins)
-  if (remote.completed) {
+  if (normalizedRemote.completed) {
     merged.completed = { ...local.completed };
-    for (const modId of Object.keys(remote.completed)) {
+    for (const modId of Object.keys(normalizedRemote.completed)) {
       if (!merged.completed[modId]) {
-        merged.completed[modId] = remote.completed[modId];
+        merged.completed[modId] = normalizedRemote.completed[modId];
       } else {
         merged.completed[modId] = { ...merged.completed[modId] };
-        for (const actId of Object.keys(remote.completed[modId])) {
-          if (remote.completed[modId][actId]) {
+        for (const actId of Object.keys(normalizedRemote.completed[modId])) {
+          if (normalizedRemote.completed[modId][actId]) {
             merged.completed[modId][actId] = true;
           }
         }
@@ -146,19 +165,19 @@ function mergeProgress(local, remote) {
   }
 
   // Merge notes (longer wins)
-  if (remote.notes) {
+  if (normalizedRemote.notes) {
     merged.notes = { ...local.notes };
-    for (const modId of Object.keys(remote.notes)) {
+    for (const modId of Object.keys(normalizedRemote.notes)) {
       const localNote = local.notes?.[modId] || "";
-      const remoteNote = remote.notes[modId] || "";
+      const remoteNote = normalizedRemote.notes[modId] || "";
       merged.notes[modId] = remoteNote.length >= localNote.length ? remoteNote : localNote;
     }
   }
 
   // Merge streak (higher current wins)
-  if (remote.streak) {
+  if (normalizedRemote.streak) {
     const localStreak = local.streak || { current: 0, best: 0, lastStudyDate: null };
-    const remoteStreak = remote.streak;
+    const remoteStreak = normalizedRemote.streak;
     merged.streak = {
       current: Math.max(localStreak.current, remoteStreak.current || 0),
       best: Math.max(localStreak.best || 0, remoteStreak.best || 0),
@@ -170,11 +189,11 @@ function mergeProgress(local, remote) {
   }
 
   // Merge milestones (union)
-  if (remote.celebratedMilestones) {
+  if (normalizedRemote.celebratedMilestones) {
     merged.celebratedMilestones = [
       ...new Set([
         ...(local.celebratedMilestones || []),
-        ...(remote.celebratedMilestones || []),
+        ...(normalizedRemote.celebratedMilestones || []),
       ]),
     ];
   }
