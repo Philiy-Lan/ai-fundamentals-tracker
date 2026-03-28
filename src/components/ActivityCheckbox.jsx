@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {
   Headphones,
-  GitBranch,
+  Images,
   Layers,
   CheckCircle,
   MessageCircle,
@@ -9,7 +9,7 @@ import {
 
 const ICON_MAP = {
   Headphones,
-  GitBranch,
+  Images,
   Layers,
   CheckCircle,
   MessageCircle,

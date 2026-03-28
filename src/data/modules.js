@@ -14,7 +14,7 @@ export const MODULES = [
     description: "History, types, and landscape of artificial intelligence",
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
-      { id: "mindmap", label: "Mind Map", icon: "GitBranch" },
+      { id: "deck", label: "Deck", icon: "Images" },
       { id: "flashcards", label: "Flashcards", icon: "Layers" },
       { id: "quiz", label: "Quiz", icon: "CheckCircle" },
       { id: "teachback", label: "Teach-Back", icon: "MessageCircle" },
@@ -29,7 +29,7 @@ export const MODULES = [
     description: "Supervised, unsupervised, and reinforcement learning",
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
-      { id: "mindmap", label: "Mind Map", icon: "GitBranch" },
+      { id: "deck", label: "Deck", icon: "Images" },
       { id: "flashcards", label: "Flashcards", icon: "Layers" },
       { id: "quiz", label: "Quiz", icon: "CheckCircle" },
       { id: "teachback", label: "Teach-Back", icon: "MessageCircle" },
@@ -44,7 +44,7 @@ export const MODULES = [
     description: "Neural network architectures and training fundamentals",
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
-      { id: "mindmap", label: "Mind Map", icon: "GitBranch" },
+      { id: "deck", label: "Deck", icon: "Images" },
       { id: "flashcards", label: "Flashcards", icon: "Layers" },
       { id: "quiz", label: "Quiz", icon: "CheckCircle" },
       { id: "teachback", label: "Teach-Back", icon: "MessageCircle" },
@@ -59,7 +59,7 @@ export const MODULES = [
     description: "Transformers, GPT architecture, prompting strategies",
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
-      { id: "mindmap", label: "Mind Map", icon: "GitBranch" },
+      { id: "deck", label: "Deck", icon: "Images" },
       { id: "flashcards", label: "Flashcards", icon: "Layers" },
       { id: "quiz", label: "Quiz", icon: "CheckCircle" },
       { id: "teachback", label: "Teach-Back", icon: "MessageCircle" },
@@ -74,7 +74,7 @@ export const MODULES = [
     description: "Text processing, embeddings, sentiment analysis",
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
-      { id: "mindmap", label: "Mind Map", icon: "GitBranch" },
+      { id: "deck", label: "Deck", icon: "Images" },
       { id: "flashcards", label: "Flashcards", icon: "Layers" },
       { id: "quiz", label: "Quiz", icon: "CheckCircle" },
       { id: "teachback", label: "Teach-Back", icon: "MessageCircle" },
@@ -89,7 +89,7 @@ export const MODULES = [
     description: "Retrieval-augmented generation, vector databases, knowledge graphs",
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
-      { id: "mindmap", label: "Mind Map", icon: "GitBranch" },
+      { id: "deck", label: "Deck", icon: "Images" },
       { id: "flashcards", label: "Flashcards", icon: "Layers" },
       { id: "quiz", label: "Quiz", icon: "CheckCircle" },
       { id: "teachback", label: "Teach-Back", icon: "MessageCircle" },
@@ -104,7 +104,7 @@ export const MODULES = [
     description: "Autonomous agents, tool use, Model Context Protocol",
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
-      { id: "mindmap", label: "Mind Map", icon: "GitBranch" },
+      { id: "deck", label: "Deck", icon: "Images" },
       { id: "flashcards", label: "Flashcards", icon: "Layers" },
       { id: "quiz", label: "Quiz", icon: "CheckCircle" },
       { id: "teachback", label: "Teach-Back", icon: "MessageCircle" },
@@ -119,7 +119,7 @@ export const MODULES = [
     description: "System design, responsible AI, emerging frontiers",
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
-      { id: "mindmap", label: "Mind Map", icon: "GitBranch" },
+      { id: "deck", label: "Deck", icon: "Images" },
       { id: "flashcards", label: "Flashcards", icon: "Layers" },
       { id: "quiz", label: "Quiz", icon: "CheckCircle" },
       { id: "teachback", label: "Teach-Back", icon: "MessageCircle" },
