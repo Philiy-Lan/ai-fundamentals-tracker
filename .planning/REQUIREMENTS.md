@@ -24,9 +24,9 @@
 
 ### Activity Panel
 
-- [ ] **PANEL-01**: Build ActivityPanel expand-in-place container within ModuleDetail
-- [ ] **PANEL-02**: ActivityPanel expands/collapses with animation when user taps an activity
-- [ ] **PANEL-03**: Shared onComplete callback that fires toggleActivity(moduleId, activityId) for all content components
+- [x] **PANEL-01**: Build ActivityPanel expand-in-place container within ModuleDetail
+- [x] **PANEL-02**: ActivityPanel expands/collapses with animation when user taps an activity
+- [x] **PANEL-03**: Shared onComplete callback that fires toggleActivity(moduleId, activityId) for all content components
 
 ### Audio Player
 
@@ -135,9 +135,9 @@
 | DATA-03 | Phase 1 | Complete |
 | DATA-04 | Phase 1 | Complete |
 | DATA-05 | Phase 1 | Complete |
-| PANEL-01 | Phase 1 | Pending |
-| PANEL-02 | Phase 1 | Pending |
-| PANEL-03 | Phase 1 | Pending |
+| PANEL-01 | Phase 1 | Complete |
+| PANEL-02 | Phase 1 | Complete |
+| PANEL-03 | Phase 1 | Complete |
 | AUDIO-01 | Phase 2 | Pending |
 | AUDIO-02 | Phase 2 | Pending |
 | AUDIO-03 | Phase 2 | Pending |
