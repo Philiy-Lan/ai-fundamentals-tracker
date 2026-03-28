@@ -10,7 +10,7 @@ This milestone transforms the existing progress tracker into a fully embedded le
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: Foundation** - Data model migration, ActivityPanel scaffold, and Workbox audio caching config
+- [x] **Phase 1: Foundation** - Data model migration, ActivityPanel scaffold, and Workbox audio caching config (completed 2026-03-28)
 - [ ] **Phase 2: Audio and Deck** - Embedded audio player and image deck carousel with content extraction for both
 - [ ] **Phase 3: Flashcards and Quiz** - Interactive flashcard and quiz components with remaining content extraction
 - [ ] **Phase 4: Teach-Back** - Claude API-powered voice/text concept evaluation with proxy and offline fallback
@@ -31,7 +31,7 @@ This milestone transforms the existing progress tracker into a fully embedded le
 
 Plans:
 - [x] 01-01-PLAN.md — Test framework setup (Wave 0): install Vitest, write all Phase 1 test stubs in RED state
-- [ ] 01-02-PLAN.md — Data migration (Wave 1): rename mindmap → deck across modules.js, storage.js, useProgress.js, useSync.js, ActivityCheckbox.jsx
+- [x] 01-02-PLAN.md — Data migration (Wave 1): rename mindmap → deck across modules.js, storage.js, useProgress.js, useSync.js, ActivityCheckbox.jsx
 - [x] 01-03-PLAN.md — ActivityPanel scaffold (Wave 1): build ActivityPanel component and wire into ModuleDetail.jsx
 - [x] 01-04-PLAN.md — Content scaffolds + PWA config (Wave 1): create flashcards/quizzes/teachback data files, public directory placeholders, Workbox runtimeCaching
 
@@ -78,7 +78,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 3/4 | In Progress|  |
+| 1. Foundation | 4/4 | Complete   | 2026-03-28 |
 | 2. Audio and Deck | 0/? | Not started | - |
 | 3. Flashcards and Quiz | 0/? | Not started | - |
 | 4. Teach-Back | 0/? | Not started | - |

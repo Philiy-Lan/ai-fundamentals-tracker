@@ -16,8 +16,8 @@
 
 ### Data Model
 
-- [ ] **DATA-01**: Rename "Mind Map" activity to "Deck" across modules.js, storage.js, useProgress.js
-- [ ] **DATA-02**: Migrate existing localStorage progress data from mindmap → deck keys
+- [x] **DATA-01**: Rename "Mind Map" activity to "Deck" across modules.js, storage.js, useProgress.js
+- [x] **DATA-02**: Migrate existing localStorage progress data from mindmap → deck keys
 - [x] **DATA-03**: Create content data structures for flashcards (JSON per module with question/answer pairs)
 - [x] **DATA-04**: Create content data structures for quizzes (JSON per module with questions, options, correct answer)
 - [x] **DATA-05**: Create content data structures for Teach-Back prompts (concept explanation prompts per module)
@@ -130,8 +130,8 @@
 | CONT-04 | Phase 3 | Pending |
 | CONT-05 | Phase 3 | Pending |
 | CONT-06 | Phase 3 | Pending |
-| DATA-01 | Phase 1 | Pending |
-| DATA-02 | Phase 1 | Pending |
+| DATA-01 | Phase 1 | Complete |
+| DATA-02 | Phase 1 | Complete |
 | DATA-03 | Phase 1 | Complete |
 | DATA-04 | Phase 1 | Complete |
 | DATA-05 | Phase 1 | Complete |

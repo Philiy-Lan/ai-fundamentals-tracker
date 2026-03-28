@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 01-foundation 01-01-PLAN.md
-last_updated: "2026-03-28T20:28:25.655Z"
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-03-28T20:29:10.956Z"
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 4
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -49,6 +49,7 @@ Plan: 4 of 4
 | Phase 01-foundation P04 | 4 | 2 tasks | 9 files |
 | Phase 01 P03 | 120 | 2 tasks | 3 files |
 | Phase 01-foundation P01 | 3 | 2 tasks | 4 files |
+| Phase 01 P02 | 8 | 3 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,9 @@ Recent decisions affecting current work:
 - [Phase 01]: ActivityPanel uses separate onPanelToggle and onComplete callbacks — tap opens panel, completion is triggered by Phase 2+ content components
 - [Phase 01]: ModuleDetail owns openActivityId state for single-panel-open constraint using functional setState
 - [Phase 01-foundation]: Vitest globals: true to avoid per-file imports; dynamic import with vi.resetModules() for localStorage isolation
+- [Phase 01]: Migration placed inline in loadProgress() before DEFAULT_STATE merge to prevent shallow spread from restoring stale mindmap key
+- [Phase 01]: normalizeMindmapToDeck exported (not private) so sync.migration tests can verify it directly without mocking the full sync flow
+- [Phase 01]: Vitest added as devDependency with jsdom environment — test infrastructure needed for TDD migration tasks
 
 ### Pending Todos
 
@@ -78,6 +82,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T20:28:25.654Z
-Stopped at: Completed 01-foundation 01-01-PLAN.md
+Last session: 2026-03-28T20:29:10.954Z
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None
