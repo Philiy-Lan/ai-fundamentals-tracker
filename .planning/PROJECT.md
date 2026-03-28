@@ -21,6 +21,11 @@ Every learning activity is accessible and completable inside the app itself — 
 - ✓ PWA with offline asset caching — existing
 - ✓ ADHD-aware UX with encouragement messages — existing
 - ✓ Export progress functionality — existing
+- ✓ Activity definitions updated (Mind Map → Deck, icons updated) — Phase 1
+- ✓ ActivityPanel expand-in-place scaffold for content embedding — Phase 1
+- ✓ Content data structures scaffolded (flashcards, quizzes, teach-back) — Phase 1
+- ✓ Service worker updated with Workbox runtimeCaching for audio (CacheFirst) — Phase 1
+- ✓ Data migration (mindmap → deck) with sync protection — Phase 1
 
 ### Active
 
@@ -30,9 +35,7 @@ Every learning activity is accessible and completable inside the app itself — 
 - [ ] Interactive flashcard component (reveal answer, mark correct/incorrect, track score)
 - [ ] Multiple choice quiz component with scoring
 - [ ] Claude API-powered Teach-Back voice conversation (asks user to explain concepts, evaluates understanding)
-- [ ] Update activity definitions (rename Mind Map → Deck, update icons)
 - [ ] All content bundled as static assets for offline-first PWA
-- [ ] Service worker updated to cache new content assets (audio, images, JSON)
 - [ ] Graceful degradation for Teach-Back when offline ("needs connection" message)
 
 ### Out of Scope
@@ -90,4 +93,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 after initialization*
+*Last updated: 2026-03-28 after Phase 1 completion*
