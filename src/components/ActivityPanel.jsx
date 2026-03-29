@@ -1,5 +1,33 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { ActivityCheckbox } from "./ActivityCheckbox"
+import { AudioPlayer } from "./AudioPlayer"
+import { DeckViewer } from "./DeckViewer"
+import { MODULES } from "../data/modules"
+
+function renderContent(activity, moduleId, onComplete) {
+  switch (activity.id) {
+    case "audio":
+      return <AudioPlayer moduleId={moduleId} onComplete={onComplete} />
+    case "deck": {
+      const mod = MODULES.find((m) => String(m.id) === moduleId)
+      const slideCount = mod?.deckSlideCount || 0
+      return (
+        <DeckViewer
+          moduleId={moduleId}
+          slideCount={slideCount}
+          onComplete={onComplete}
+        />
+      )
+    }
+    default:
+      return (
+        <p className="text-center py-4">
+          Content coming soon — tap the checkbox above to mark complete
+          manually.
+        </p>
+      )
+  }
+}
 
 export function ActivityPanel({
   activity,
@@ -36,9 +64,7 @@ export function ActivityPanel({
                 color: "var(--text-muted)",
               }}
             >
-              <p className="text-center py-4">
-                Content coming in Phase 2 — tap the checkbox above to mark complete manually.
-              </p>
+              {renderContent(activity, moduleId, onComplete)}
             </div>
           </motion.div>
         )}
