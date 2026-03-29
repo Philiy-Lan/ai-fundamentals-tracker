@@ -45,7 +45,14 @@ Plans:
   3. User can swipe or tap prev/next through deck slides, see "3 / 12" position, tap to zoom, and navigate with arrow keys on desktop
   4. Deck activity is auto-marked complete when the last slide is reached
   5. Audio files load and play on a device that has gone offline after the first play (service worker cache confirmed on physical iOS device)
-**Plans**: TBD
+**Plans**: 5 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Content extraction (Wave 1): extract audio MP3s and deck slide PNGs from all 8 NotebookLM notebooks via MCP tools; write manifests; add deckSlideCount to modules.js
+- [ ] 02-02-PLAN.md — Test stubs RED state (Wave 1): write AudioPlayer.test.jsx and DeckViewer.test.jsx; update ActivityPanel.test.jsx placeholder assertion
+- [ ] 02-03-PLAN.md — AudioPlayer component (Wave 2): install react-h5-audio-player; implement play/pause, scrub, speed selector, auto-complete at 90%
+- [ ] 02-04-PLAN.md — DeckViewer component (Wave 2): install embla-carousel-react; implement carousel, counter, zoom modal, keyboard nav, auto-complete on last slide
+- [ ] 02-05-PLAN.md — ActivityPanel integration (Wave 3): wire AudioPlayer and DeckViewer into ActivityPanel content routing; human end-to-end verification
 
 ### Phase 3: Flashcards and Quiz
 **Goal**: Users can test their knowledge with interactive flashcards and multiple-choice quizzes for all 8 modules, with session scores tracked and completion auto-detected
@@ -79,6 +86,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-28 |
-| 2. Audio and Deck | 0/? | Not started | - |
+| 2. Audio and Deck | 0/5 | Not started | - |
 | 3. Flashcards and Quiz | 0/? | Not started | - |
 | 4. Teach-Back | 0/? | Not started | - |
