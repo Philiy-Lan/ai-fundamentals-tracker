@@ -64,14 +64,14 @@
 
 ### Teach-Back
 
-- [ ] **TEACH-01**: Module-specific concept prompt displayed to user (e.g., "Explain how transformers use attention")
+- [x] **TEACH-01**: Module-specific concept prompt displayed to user (e.g., "Explain how transformers use attention")
 - [ ] **TEACH-02**: Voice input via Web Speech API (SpeechRecognition)
 - [ ] **TEACH-03**: Text input fallback when SpeechRecognition is unavailable (Firefox, etc.)
 - [ ] **TEACH-04**: Transcript display showing what was captured
-- [ ] **TEACH-05**: Claude API call to evaluate user's explanation and provide feedback
+- [x] **TEACH-05**: Claude API call to evaluate user's explanation and provide feedback
 - [ ] **TEACH-06**: AI feedback display with correctness assessment and guidance
 - [ ] **TEACH-07**: Graceful offline fallback — "needs connection" message when navigator.onLine is false
-- [ ] **TEACH-08**: Claude API proxy (Cloudflare Worker or equivalent) to keep API key server-side
+- [x] **TEACH-08**: Claude API proxy (Cloudflare Worker or equivalent) to keep API key server-side
 
 ### PWA / Offline
 
@@ -160,14 +160,14 @@
 | QUIZ-04 | Phase 3 | Complete |
 | QUIZ-05 | Phase 3 | Complete |
 | QUIZ-06 | Phase 3 | Complete |
-| TEACH-01 | Phase 4 | Pending |
+| TEACH-01 | Phase 4 | Complete |
 | TEACH-02 | Phase 4 | Pending |
 | TEACH-03 | Phase 4 | Pending |
 | TEACH-04 | Phase 4 | Pending |
-| TEACH-05 | Phase 4 | Pending |
+| TEACH-05 | Phase 4 | Complete |
 | TEACH-06 | Phase 4 | Pending |
 | TEACH-07 | Phase 4 | Pending |
-| TEACH-08 | Phase 4 | Pending |
+| TEACH-08 | Phase 4 | Complete |
 | PWA-01 | Phase 1 | Complete |
 | PWA-02 | Phase 3 | Complete |
 | PWA-03 | Phase 2 | Complete |

@@ -85,7 +85,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Content + API route + test stubs (Wave 1): populate teachback.js for all 8 modules; create api/evaluate.js Vercel serverless function; install @anthropic-ai/sdk; create TeachBackViewer test stubs in RED state; extend ActivityPanel tests
+- [x] 04-01-PLAN.md — Content + API route + test stubs (Wave 1): populate teachback.js for all 8 modules; create api/evaluate.js Vercel serverless function; install @anthropic-ai/sdk; create TeachBackViewer test stubs in RED state; extend ActivityPanel tests
 - [ ] 04-02-PLAN.md — TeachBackViewer component + ActivityPanel wiring (Wave 2): build full state-machine component with voice input, text fallback, API submission, feedback display, pass/fail, offline fallback; wire into ActivityPanel routing
 - [ ] 04-03-PLAN.md — Human verification (Wave 3): full test suite green; end-to-end browser verification of voice, text, feedback, offline, and cross-module prompts
 
@@ -99,4 +99,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation | 4/4 | Complete   | 2026-03-28 |
 | 2. Audio and Deck | 5/5 | Complete   | 2026-03-29 |
 | 3. Flashcards and Quiz | 4/4 | Complete   | 2026-03-29 |
-| 4. Teach-Back | 0/3 | Not started | - |
+| 4. Teach-Back | 1/3 | In Progress|  |
