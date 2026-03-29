@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-audio-and-deck 02-01-PLAN.md
-last_updated: "2026-03-29T09:50:26.348Z"
+stopped_at: Completed 02-audio-and-deck 02-04-PLAN.md
+last_updated: "2026-03-29T09:55:22.090Z"
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 9
-  completed_plans: 6
+  completed_plans: 7
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-28)
 ## Current Position
 
 Phase: 02 (audio-and-deck) — EXECUTING
-Plan: 3 of 5
+Plan: 4 of 5
 
 ## Performance Metrics
 
@@ -52,6 +52,7 @@ Plan: 3 of 5
 | Phase 01 P02 | 8 | 3 tasks | 8 files |
 | Phase 02 P02 | 3 | 3 tasks | 3 files |
 | Phase 02-audio-and-deck P01 | 232 | 2 tasks | 41 files |
+| Phase 02-audio-and-deck P04 | 10 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -77,6 +78,7 @@ Recent decisions affecting current work:
 - [Phase 02]: ActivityPanel tests mock AudioPlayer and DeckViewer via vi.mock to isolate routing logic testing
 - [Phase 02-audio-and-deck]: Placeholder audio/deck content used when NotebookLM MCP unavailable in executor context — manifest.json pattern established for slide count
 - [Phase 02-audio-and-deck]: deckSlideCount in modules.js mirrors manifest.json count — both must stay in sync when real content is extracted
+- [Phase 02-audio-and-deck]: flushSync wraps setSelectedIndex in DeckViewer onSelect callback so tests calling mockSelectCallback() raw see synchronous DOM updates
 
 ### Pending Todos
 
@@ -89,6 +91,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-29T09:50:26.346Z
-Stopped at: Completed 02-audio-and-deck 02-01-PLAN.md
+Last session: 2026-03-29T09:55:22.088Z
+Stopped at: Completed 02-audio-and-deck 02-04-PLAN.md
 Resume file: None
