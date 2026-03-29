@@ -2,6 +2,13 @@ import { describe, it, expect, vi } from "vitest"
 import { render, screen, fireEvent } from "@testing-library/react"
 import { ActivityPanel } from "../components/ActivityPanel.jsx"
 
+vi.mock("../components/AudioPlayer.jsx", () => ({
+  AudioPlayer: () => <div data-testid="audio-player-mock">AudioPlayer</div>,
+}))
+vi.mock("../components/DeckViewer.jsx", () => ({
+  DeckViewer: () => <div data-testid="deck-viewer-mock">DeckViewer</div>,
+}))
+
 const mockActivity = { id: "audio", label: "Audio Overview", icon: "Headphones" }
 
 describe("ActivityPanel", () => {
@@ -35,10 +42,10 @@ describe("ActivityPanel", () => {
     expect(screen.queryByText(/Content coming in Phase/)).not.toBeInTheDocument()
   })
 
-  it("shows placeholder content when isOpen is true (PANEL-01, PANEL-02)", () => {
+  it("renders AudioPlayer when activity.id is 'audio' and isOpen is true (D-24)", () => {
     render(
       <ActivityPanel
-        activity={mockActivity}
+        activity={{ id: "audio", label: "Audio Overview", icon: "Headphones" }}
         moduleId="1"
         checked={false}
         isOpen={true}
@@ -47,7 +54,22 @@ describe("ActivityPanel", () => {
         phaseColor="#b07ff5"
       />
     )
-    expect(screen.getByText(/Content coming in Phase/)).toBeInTheDocument()
+    expect(screen.getByTestId("audio-player-mock")).toBeInTheDocument()
+  })
+
+  it("renders placeholder for unimplemented activities (flashcards) when isOpen is true", () => {
+    render(
+      <ActivityPanel
+        activity={{ id: "flashcards", label: "Flashcards", icon: "Layers" }}
+        moduleId="1"
+        checked={false}
+        isOpen={true}
+        onPanelToggle={vi.fn()}
+        onComplete={vi.fn()}
+        phaseColor="#b07ff5"
+      />
+    )
+    expect(screen.getByText(/Content coming soon/)).toBeInTheDocument()
   })
 
   it("calls onPanelToggle with activity.id when the row is tapped (PANEL-02)", () => {
