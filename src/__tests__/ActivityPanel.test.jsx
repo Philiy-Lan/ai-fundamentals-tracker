@@ -8,6 +8,12 @@ vi.mock("../components/AudioPlayer.jsx", () => ({
 vi.mock("../components/DeckViewer.jsx", () => ({
   DeckViewer: () => <div data-testid="deck-viewer-mock">DeckViewer</div>,
 }))
+vi.mock("../components/FlashcardViewer.jsx", () => ({
+  FlashcardViewer: () => <div data-testid="flashcard-viewer-mock">FlashcardViewer</div>,
+}))
+vi.mock("../components/QuizViewer.jsx", () => ({
+  QuizViewer: () => <div data-testid="quiz-viewer-mock">QuizViewer</div>,
+}))
 
 const mockActivity = { id: "audio", label: "Audio Overview", icon: "Headphones" }
 
@@ -57,7 +63,22 @@ describe("ActivityPanel", () => {
     expect(screen.getByTestId("audio-player-mock")).toBeInTheDocument()
   })
 
-  it("renders placeholder for unimplemented activities (flashcards) when isOpen is true", () => {
+  it("renders placeholder for unimplemented activities (teachback) when isOpen is true", () => {
+    render(
+      <ActivityPanel
+        activity={{ id: "teachback", label: "Teach-Back", icon: "MessageCircle" }}
+        moduleId="1"
+        checked={false}
+        isOpen={true}
+        onPanelToggle={vi.fn()}
+        onComplete={vi.fn()}
+        phaseColor="#b07ff5"
+      />
+    )
+    expect(screen.getByText(/Content coming soon/)).toBeInTheDocument()
+  })
+
+  it("renders FlashcardViewer when activity.id is 'flashcards' and isOpen is true (D-22)", () => {
     render(
       <ActivityPanel
         activity={{ id: "flashcards", label: "Flashcards", icon: "Layers" }}
@@ -69,7 +90,22 @@ describe("ActivityPanel", () => {
         phaseColor="#b07ff5"
       />
     )
-    expect(screen.getByText(/Content coming soon/)).toBeInTheDocument()
+    expect(screen.getByTestId("flashcard-viewer-mock")).toBeInTheDocument()
+  })
+
+  it("renders QuizViewer when activity.id is 'quiz' and isOpen is true (D-22)", () => {
+    render(
+      <ActivityPanel
+        activity={{ id: "quiz", label: "Quiz", icon: "CheckCircle" }}
+        moduleId="1"
+        checked={false}
+        isOpen={true}
+        onPanelToggle={vi.fn()}
+        onComplete={vi.fn()}
+        phaseColor="#b07ff5"
+      />
+    )
+    expect(screen.getByTestId("quiz-viewer-mock")).toBeInTheDocument()
   })
 
   it("calls onPanelToggle with activity.id when the row is tapped (PANEL-02)", () => {
