@@ -64,7 +64,13 @@ Plans:
   3. User can select a multiple-choice answer, submit it, see immediately whether it was right or wrong (with correct answer revealed on wrong selection), and view a final score screen with percentage
   4. Quiz activity is auto-marked complete when the final question is acknowledged
   5. All flashcard and quiz content (images, JSON) is included in the Workbox precache manifest and available fully offline
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Content + test stubs (Wave 1): populate flashcards.js and quizzes.js for all 8 modules; create FlashcardViewer and QuizViewer test stubs in RED state; extend ActivityPanel tests
+- [ ] 03-02-PLAN.md — FlashcardViewer component (Wave 2): card flip animation, self-rating, running score, shuffle, auto-complete
+- [ ] 03-03-PLAN.md — QuizViewer component (Wave 2): MC questions, submit/reveal, correct answer highlight, score screen, auto-complete
+- [ ] 03-04-PLAN.md — ActivityPanel integration (Wave 3): wire FlashcardViewer and QuizViewer into ActivityPanel routing; human end-to-end verification
 
 ### Phase 4: Teach-Back
 **Goal**: Users can speak or type an explanation of a module concept, receive Claude AI evaluation and feedback, and get a graceful "needs connection" message when offline
@@ -87,5 +93,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-28 |
 | 2. Audio and Deck | 5/5 | Complete   | 2026-03-29 |
-| 3. Flashcards and Quiz | 0/? | Not started | - |
+| 3. Flashcards and Quiz | 0/4 | In progress | - |
 | 4. Teach-Back | 0/? | Not started | - |
