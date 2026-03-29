@@ -2,6 +2,8 @@ import { AnimatePresence, motion } from "framer-motion"
 import { ActivityCheckbox } from "./ActivityCheckbox"
 import { AudioPlayer } from "./AudioPlayer"
 import { DeckViewer } from "./DeckViewer"
+import { FlashcardViewer } from "./FlashcardViewer"
+import { QuizViewer } from "./QuizViewer"
 import { MODULES } from "../data/modules"
 
 function renderContent(activity, moduleId, onComplete) {
@@ -19,6 +21,10 @@ function renderContent(activity, moduleId, onComplete) {
         />
       )
     }
+    case "flashcards":
+      return <FlashcardViewer moduleId={moduleId} onComplete={onComplete} />
+    case "quiz":
+      return <QuizViewer moduleId={moduleId} onComplete={onComplete} />
     default:
       return (
         <p className="text-center py-4">
