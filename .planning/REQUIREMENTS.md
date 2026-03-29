@@ -46,12 +46,12 @@
 
 ### Flashcards
 
-- [ ] **FLASH-01**: Card flip animation to reveal answer
-- [ ] **FLASH-02**: Correct / incorrect self-rating buttons after reveal
-- [ ] **FLASH-03**: Running session score display (X/Y correct)
-- [ ] **FLASH-04**: Card progress indicator (e.g., "5 of 20")
-- [ ] **FLASH-05**: Shuffle option to randomize card order
-- [ ] **FLASH-06**: Auto-complete activity when all cards reviewed
+- [x] **FLASH-01**: Card flip animation to reveal answer
+- [x] **FLASH-02**: Correct / incorrect self-rating buttons after reveal
+- [x] **FLASH-03**: Running session score display (X/Y correct)
+- [x] **FLASH-04**: Card progress indicator (e.g., "5 of 20")
+- [x] **FLASH-05**: Shuffle option to randomize card order
+- [x] **FLASH-06**: Auto-complete activity when all cards reviewed
 
 ### Quiz
 
@@ -76,7 +76,7 @@
 ### PWA / Offline
 
 - [x] **PWA-01**: Service worker updated with Workbox runtimeCaching for audio files (CacheFirst strategy)
-- [ ] **PWA-02**: All non-audio content (images, JSON) included in precache manifest
+- [x] **PWA-02**: All non-audio content (images, JSON) included in precache manifest
 - [x] **PWA-03**: Audio files cached on first play, available offline thereafter
 
 ## v2 Requirements
@@ -148,12 +148,12 @@
 | DECK-03 | Phase 2 | Complete |
 | DECK-04 | Phase 2 | Complete |
 | DECK-05 | Phase 2 | Complete |
-| FLASH-01 | Phase 3 | Pending |
-| FLASH-02 | Phase 3 | Pending |
-| FLASH-03 | Phase 3 | Pending |
-| FLASH-04 | Phase 3 | Pending |
-| FLASH-05 | Phase 3 | Pending |
-| FLASH-06 | Phase 3 | Pending |
+| FLASH-01 | Phase 3 | Complete |
+| FLASH-02 | Phase 3 | Complete |
+| FLASH-03 | Phase 3 | Complete |
+| FLASH-04 | Phase 3 | Complete |
+| FLASH-05 | Phase 3 | Complete |
+| FLASH-06 | Phase 3 | Complete |
 | QUIZ-01 | Phase 3 | Complete |
 | QUIZ-02 | Phase 3 | Complete |
 | QUIZ-03 | Phase 3 | Complete |
@@ -169,7 +169,7 @@
 | TEACH-07 | Phase 4 | Pending |
 | TEACH-08 | Phase 4 | Pending |
 | PWA-01 | Phase 1 | Complete |
-| PWA-02 | Phase 3 | Pending |
+| PWA-02 | Phase 3 | Complete |
 | PWA-03 | Phase 2 | Complete |
 
 **Coverage:**

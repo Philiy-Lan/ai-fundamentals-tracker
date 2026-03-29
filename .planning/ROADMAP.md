@@ -70,7 +70,7 @@ Plans:
 - [x] 03-01-PLAN.md — Content + test stubs (Wave 1): populate flashcards.js and quizzes.js for all 8 modules; create FlashcardViewer and QuizViewer test stubs in RED state; extend ActivityPanel tests
 - [x] 03-02-PLAN.md — FlashcardViewer component (Wave 2): card flip animation, self-rating, running score, shuffle, auto-complete
 - [x] 03-03-PLAN.md — QuizViewer component (Wave 2): MC questions, submit/reveal, correct answer highlight, score screen, auto-complete
-- [ ] 03-04-PLAN.md — ActivityPanel integration (Wave 3): wire FlashcardViewer and QuizViewer into ActivityPanel routing; human end-to-end verification
+- [x] 03-04-PLAN.md — ActivityPanel integration (Wave 3): wire FlashcardViewer and QuizViewer into ActivityPanel routing; human end-to-end verification
 
 ### Phase 4: Teach-Back
 **Goal**: Users can speak or type an explanation of a module concept, receive Claude AI evaluation and feedback, and get a graceful "needs connection" message when offline
