@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Phase 2 Wave 2+3 complete inline
-last_updated: "2026-03-29T10:00:48.324Z"
+stopped_at: Completed 02-03-PLAN.md
+last_updated: "2026-03-29T10:40:50.651Z"
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 9
-  completed_plans: 7
+  completed_plans: 8
 ---
 
 # Project State
@@ -23,8 +23,8 @@ See: .planning/PROJECT.md (updated 2026-03-28)
 
 ## Current Position
 
-Phase: 3
-Plan: Not started
+Phase: 02 (audio-and-deck) — EXECUTING
+Plan: 2 of 5
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Plan: Not started
 | Phase 02 P02 | 3 | 3 tasks | 3 files |
 | Phase 02-audio-and-deck P01 | 232 | 2 tasks | 41 files |
 | Phase 02-audio-and-deck P04 | 10 | 2 tasks | 3 files |
+| Phase 02-audio-and-deck P03 | 10 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -79,6 +80,8 @@ Recent decisions affecting current work:
 - [Phase 02-audio-and-deck]: Placeholder audio/deck content used when NotebookLM MCP unavailable in executor context — manifest.json pattern established for slide count
 - [Phase 02-audio-and-deck]: deckSlideCount in modules.js mirrors manifest.json count — both must stay in sync when real content is extracted
 - [Phase 02-audio-and-deck]: flushSync wraps setSelectedIndex in DeckViewer onSelect callback so tests calling mockSelectCallback() raw see synchronous DOM updates
+- [Phase 02-audio-and-deck]: playbackRate re-applied in onPlay for iOS Safari compatibility — handles browser reset-on-resume behavior
+- [Phase 02-audio-and-deck]: completedRef.current guard prevents double-fire of onComplete at 90% threshold
 
 ### Pending Todos
 
@@ -91,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-29T09:59:09.455Z
-Stopped at: Phase 2 Wave 2+3 complete inline
-Resume file: .planning/phases/02-audio-and-deck/02-05-PLAN.md
+Last session: 2026-03-29T10:40:50.649Z
+Stopped at: Completed 02-03-PLAN.md
+Resume file: None

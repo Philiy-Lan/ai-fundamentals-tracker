@@ -77,7 +77,7 @@
 
 - [x] **PWA-01**: Service worker updated with Workbox runtimeCaching for audio files (CacheFirst strategy)
 - [ ] **PWA-02**: All non-audio content (images, JSON) included in precache manifest
-- [ ] **PWA-03**: Audio files cached on first play, available offline thereafter
+- [x] **PWA-03**: Audio files cached on first play, available offline thereafter
 
 ## v2 Requirements
 
@@ -170,7 +170,7 @@
 | TEACH-08 | Phase 4 | Pending |
 | PWA-01 | Phase 1 | Complete |
 | PWA-02 | Phase 3 | Pending |
-| PWA-03 | Phase 2 | Pending |
+| PWA-03 | Phase 2 | Complete |
 
 **Coverage:**
 - v1 requirements: 47 total
