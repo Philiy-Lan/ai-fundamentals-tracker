@@ -30,19 +30,19 @@
 
 ### Audio Player
 
-- [ ] **AUDIO-01**: Embedded audio player with play/pause toggle
-- [ ] **AUDIO-02**: Scrub bar / seek with current time and total duration display
-- [ ] **AUDIO-03**: Playback speed control (0.5x, 1x, 1.25x, 1.5x, 2x)
-- [ ] **AUDIO-04**: Auto-complete activity at ~90% playback progress
-- [ ] **AUDIO-05**: Audio files served from public/audio/ and cached by service worker on first play
+- [x] **AUDIO-01**: Embedded audio player with play/pause toggle
+- [x] **AUDIO-02**: Scrub bar / seek with current time and total duration display
+- [x] **AUDIO-03**: Playback speed control (0.5x, 1x, 1.25x, 1.5x, 2x)
+- [x] **AUDIO-04**: Auto-complete activity at ~90% playback progress
+- [x] **AUDIO-05**: Audio files served from public/audio/ and cached by service worker on first play
 
 ### Deck Viewer
 
-- [ ] **DECK-01**: Image carousel with previous/next navigation
-- [ ] **DECK-02**: Slide counter showing current position (e.g., "3 / 12")
-- [ ] **DECK-03**: Tap/click to zoom image for readability
-- [ ] **DECK-04**: Auto-complete activity when user reaches last slide
-- [ ] **DECK-05**: Keyboard arrow key navigation on desktop
+- [x] **DECK-01**: Image carousel with previous/next navigation
+- [x] **DECK-02**: Slide counter showing current position (e.g., "3 / 12")
+- [x] **DECK-03**: Tap/click to zoom image for readability
+- [x] **DECK-04**: Auto-complete activity when user reaches last slide
+- [x] **DECK-05**: Keyboard arrow key navigation on desktop
 
 ### Flashcards
 
@@ -138,16 +138,16 @@
 | PANEL-01 | Phase 1 | Complete |
 | PANEL-02 | Phase 1 | Complete |
 | PANEL-03 | Phase 1 | Complete |
-| AUDIO-01 | Phase 2 | Pending |
-| AUDIO-02 | Phase 2 | Pending |
-| AUDIO-03 | Phase 2 | Pending |
-| AUDIO-04 | Phase 2 | Pending |
-| AUDIO-05 | Phase 2 | Pending |
-| DECK-01 | Phase 2 | Pending |
-| DECK-02 | Phase 2 | Pending |
-| DECK-03 | Phase 2 | Pending |
-| DECK-04 | Phase 2 | Pending |
-| DECK-05 | Phase 2 | Pending |
+| AUDIO-01 | Phase 2 | Complete |
+| AUDIO-02 | Phase 2 | Complete |
+| AUDIO-03 | Phase 2 | Complete |
+| AUDIO-04 | Phase 2 | Complete |
+| AUDIO-05 | Phase 2 | Complete |
+| DECK-01 | Phase 2 | Complete |
+| DECK-02 | Phase 2 | Complete |
+| DECK-03 | Phase 2 | Complete |
+| DECK-04 | Phase 2 | Complete |
+| DECK-05 | Phase 2 | Complete |
 | FLASH-01 | Phase 3 | Pending |
 | FLASH-02 | Phase 3 | Pending |
 | FLASH-03 | Phase 3 | Pending |

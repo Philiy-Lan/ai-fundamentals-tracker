@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-29T09:24:18.152Z"
+stopped_at: Completed 02-02-PLAN.md
+last_updated: "2026-03-29T09:49:46.283Z"
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 9
+  completed_plans: 5
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Every learning activity is accessible and completable inside the app — no switching between tools.
-**Current focus:** Phase 01 — foundation
+**Current focus:** Phase 02 — audio-and-deck
 
 ## Current Position
 
-Phase: 2
-Plan: Not started
+Phase: 02 (audio-and-deck) — EXECUTING
+Plan: 2 of 5
 
 ## Performance Metrics
 
@@ -50,6 +50,7 @@ Plan: Not started
 | Phase 01 P03 | 120 | 2 tasks | 3 files |
 | Phase 01-foundation P01 | 3 | 2 tasks | 4 files |
 | Phase 01 P02 | 8 | 3 tasks | 8 files |
+| Phase 02 P02 | 3 | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,9 @@ Recent decisions affecting current work:
 - [Phase 01]: Migration placed inline in loadProgress() before DEFAULT_STATE merge to prevent shallow spread from restoring stale mindmap key
 - [Phase 01]: normalizeMindmapToDeck exported (not private) so sync.migration tests can verify it directly without mocking the full sync flow
 - [Phase 01]: Vitest added as devDependency with jsdom environment — test infrastructure needed for TDD migration tasks
+- [Phase 02]: DeckViewer accepts slideCount prop directly from ActivityPanel to enable pure static rendering and simpler tests
+- [Phase 02]: window.__audioPlayerProps pattern exposes mocked react-h5-audio-player callbacks to test scope for AUDIO-04 assertions
+- [Phase 02]: ActivityPanel tests mock AudioPlayer and DeckViewer via vi.mock to isolate routing logic testing
 
 ### Pending Todos
 
@@ -82,6 +86,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-29T09:24:18.150Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-audio-and-deck/02-CONTEXT.md
+Last session: 2026-03-29T09:49:46.281Z
+Stopped at: Completed 02-02-PLAN.md
+Resume file: None
