@@ -11,7 +11,7 @@ This milestone transforms the existing progress tracker into a fully embedded le
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
 - [x] **Phase 1: Foundation** - Data model migration, ActivityPanel scaffold, and Workbox audio caching config (completed 2026-03-28)
-- [ ] **Phase 2: Audio and Deck** - Embedded audio player and image deck carousel with content extraction for both
+- [x] **Phase 2: Audio and Deck** - Embedded audio player and image deck carousel with content extraction for both (completed 2026-03-29)
 - [ ] **Phase 3: Flashcards and Quiz** - Interactive flashcard and quiz components with remaining content extraction
 - [ ] **Phase 4: Teach-Back** - Claude API-powered voice/text concept evaluation with proxy and offline fallback
 
@@ -52,7 +52,7 @@ Plans:
 - [x] 02-02-PLAN.md — Test stubs RED state (Wave 1): write AudioPlayer.test.jsx and DeckViewer.test.jsx; update ActivityPanel.test.jsx placeholder assertion
 - [x] 02-03-PLAN.md — AudioPlayer component (Wave 2): install react-h5-audio-player; implement play/pause, scrub, speed selector, auto-complete at 90%
 - [x] 02-04-PLAN.md — DeckViewer component (Wave 2): install embla-carousel-react; implement carousel, counter, zoom modal, keyboard nav, auto-complete on last slide
-- [ ] 02-05-PLAN.md — ActivityPanel integration (Wave 3): wire AudioPlayer and DeckViewer into ActivityPanel content routing; human end-to-end verification
+- [x] 02-05-PLAN.md — ActivityPanel integration (Wave 3): wire AudioPlayer and DeckViewer into ActivityPanel content routing; human end-to-end verification
 
 ### Phase 3: Flashcards and Quiz
 **Goal**: Users can test their knowledge with interactive flashcards and multiple-choice quizzes for all 8 modules, with session scores tracked and completion auto-detected
@@ -86,6 +86,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-28 |
-| 2. Audio and Deck | 4/5 | In Progress|  |
+| 2. Audio and Deck | 5/5 | Complete   | 2026-03-29 |
 | 3. Flashcards and Quiz | 0/? | Not started | - |
 | 4. Teach-Back | 0/? | Not started | - |

@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-03-PLAN.md
-last_updated: "2026-03-29T10:40:50.651Z"
+stopped_at: Checkpoint 02-05 Task 2 — awaiting human end-to-end verification of audio and deck activities
+last_updated: "2026-03-29T10:43:47.976Z"
 progress:
   total_phases: 4
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 9
-  completed_plans: 8
+  completed_plans: 9
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-28)
 ## Current Position
 
 Phase: 02 (audio-and-deck) — EXECUTING
-Plan: 2 of 5
+Plan: 3 of 5
 
 ## Performance Metrics
 
@@ -54,6 +54,7 @@ Plan: 2 of 5
 | Phase 02-audio-and-deck P01 | 232 | 2 tasks | 41 files |
 | Phase 02-audio-and-deck P04 | 10 | 2 tasks | 3 files |
 | Phase 02-audio-and-deck P03 | 10 | 2 tasks | 4 files |
+| Phase 02-audio-and-deck P05 | 5 | 1 tasks | 0 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,7 @@ Recent decisions affecting current work:
 - [Phase 02-audio-and-deck]: flushSync wraps setSelectedIndex in DeckViewer onSelect callback so tests calling mockSelectCallback() raw see synchronous DOM updates
 - [Phase 02-audio-and-deck]: playbackRate re-applied in onPlay for iOS Safari compatibility — handles browser reset-on-resume behavior
 - [Phase 02-audio-and-deck]: completedRef.current guard prevents double-fire of onComplete at 90% threshold
+- [Phase 02-audio-and-deck]: D-23/24/25: ActivityPanel content routing via renderContent switch — AudioPlayer for audio, DeckViewer for deck, placeholder for others; moduleId and onComplete passed to both
 
 ### Pending Todos
 
@@ -94,6 +96,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-29T10:40:50.649Z
-Stopped at: Completed 02-03-PLAN.md
+Last session: 2026-03-29T10:43:47.974Z
+Stopped at: Checkpoint 02-05 Task 2 — awaiting human end-to-end verification of audio and deck activities
 Resume file: None
