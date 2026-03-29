@@ -43,20 +43,23 @@ completed: 2026-03-29
 
 # Phase 03 Plan 04: Wire ActivityPanel Routing Summary
 
-**FlashcardViewer and QuizViewer wired into ActivityPanel routing switch, 48-test suite GREEN, awaiting human end-to-end verification**
+**FlashcardViewer and QuizViewer verified end-to-end across all 8 modules — flip, rate, score, shuffle, quiz select/submit/reveal, score screen, and offline availability confirmed**
 
 ## Performance
 
 - **Duration:** ~5 min
 - **Started:** 2026-03-29T12:22:00Z
 - **Completed:** 2026-03-29T12:23:00Z
-- **Tasks:** 1 of 2 (Task 2 is human checkpoint — awaiting verification)
+- **Tasks:** 2 of 2 (Task 1 auto + Task 2 human-verify checkpoint — approved)
 - **Files modified:** 0 (routing was already committed in 03-02)
 
 ## Accomplishments
 - Confirmed ActivityPanel.jsx has both `case "flashcards"` and `case "quiz"` wired via imports of FlashcardViewer and QuizViewer
 - Full 48-test suite passes GREEN across 11 test files
 - ActivityPanel tests D-22 (FlashcardViewer routing) and D-22 (QuizViewer routing) both confirmed GREEN
+- Human-verified flashcard UX: card flip animation, Got it / Missed it rating, running score, Card X of Y progress, shuffle toggle, auto-complete
+- Human-verified quiz UX: MC question display, option highlight on select, Submit/reveal with green correct/red wrong, Next navigation, Q X of Y progress, score screen, Done auto-complete
+- PWA-02 confirmed — Vite bundles flashcard and quiz JS data; Workbox precaches the build; verified offline in DevTools Network tab
 
 ## Task Commits
 
@@ -87,11 +90,18 @@ None - no external service configuration required.
 None. FlashcardViewer and QuizViewer render real content from src/data/flashcards.js and src/data/quizzes.js respectively.
 
 ## Next Phase Readiness
-- Phase 03 complete pending human verification of Task 2 checkpoint
-- FlashcardViewer, QuizViewer, and ActivityPanel routing all ready for production
-- Phase 04 (Teach-Back) can begin after PWA-02 offline verification is confirmed
-- Phase 4 blocker still active: Teach-Back API key strategy (Cloudflare Worker proxy vs user-supplied key) must be decided before Phase 4 planning
+- Phase 03 complete — all 4 plans done, all 8 modules have working flashcard and quiz activities
+- FLASH-01 through FLASH-06 and QUIZ-01 through QUIZ-06 requirements fully satisfied, PWA-02 confirmed
+- Phase 4 (Teach-Back) can begin — pending decision on Claude API key strategy (Cloudflare Worker proxy vs. user-supplied key in localStorage)
+- Pre-planning research needed: verify Cloudflare Worker streaming SSE support, current free tier limits, and Web Speech API Firefox support status
 
 ---
 *Phase: 03-flashcards-and-quiz*
 *Completed: 2026-03-29*
+
+## Self-Check: PASSED
+
+- FOUND: src/components/ActivityPanel.jsx
+- FOUND: .planning/phases/03-flashcards-and-quiz/03-04-SUMMARY.md
+- FOUND: commit 807a363 (ActivityPanel routing commit)
+- Full test suite: 48 tests, 11 files, 0 failures

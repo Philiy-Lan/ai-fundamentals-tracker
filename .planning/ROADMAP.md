@@ -12,7 +12,7 @@ This milestone transforms the existing progress tracker into a fully embedded le
 
 - [x] **Phase 1: Foundation** - Data model migration, ActivityPanel scaffold, and Workbox audio caching config (completed 2026-03-28)
 - [x] **Phase 2: Audio and Deck** - Embedded audio player and image deck carousel with content extraction for both (completed 2026-03-29)
-- [ ] **Phase 3: Flashcards and Quiz** - Interactive flashcard and quiz components with remaining content extraction
+- [x] **Phase 3: Flashcards and Quiz** - Interactive flashcard and quiz components with remaining content extraction (completed 2026-03-29)
 - [ ] **Phase 4: Teach-Back** - Claude API-powered voice/text concept evaluation with proxy and offline fallback
 
 ## Phase Details
@@ -70,7 +70,7 @@ Plans:
 - [x] 03-01-PLAN.md — Content + test stubs (Wave 1): populate flashcards.js and quizzes.js for all 8 modules; create FlashcardViewer and QuizViewer test stubs in RED state; extend ActivityPanel tests
 - [x] 03-02-PLAN.md — FlashcardViewer component (Wave 2): card flip animation, self-rating, running score, shuffle, auto-complete
 - [x] 03-03-PLAN.md — QuizViewer component (Wave 2): MC questions, submit/reveal, correct answer highlight, score screen, auto-complete
-- [x] 03-04-PLAN.md — ActivityPanel integration (Wave 3): wire FlashcardViewer and QuizViewer into ActivityPanel routing; human end-to-end verification
+- [x] 03-04-PLAN.md — ActivityPanel integration (Wave 3): wire FlashcardViewer and QuizViewer into ActivityPanel routing; human end-to-end verification (approved)
 
 ### Phase 4: Teach-Back
 **Goal**: Users can speak or type an explanation of a module concept, receive Claude AI evaluation and feedback, and get a graceful "needs connection" message when offline
@@ -93,5 +93,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-28 |
 | 2. Audio and Deck | 5/5 | Complete   | 2026-03-29 |
-| 3. Flashcards and Quiz | 3/4 | In Progress|  |
+| 3. Flashcards and Quiz | 4/4 | Complete   | 2026-03-29 |
 | 4. Teach-Back | 0/? | Not started | - |
