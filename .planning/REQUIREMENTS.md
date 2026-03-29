@@ -9,10 +9,10 @@
 
 - [x] **CONT-01**: Extract audio overview files from all 8 NotebookLM notebooks via MCP tools
 - [x] **CONT-02**: Extract deck/slide images from all 8 NotebookLM notebooks via MCP tools
-- [ ] **CONT-03**: Extract flashcard Q&A pairs from all 8 NotebookLM notebooks via MCP tools
-- [ ] **CONT-04**: Extract multiple choice quiz questions from all 8 NotebookLM notebooks via MCP tools
-- [ ] **CONT-05**: Organize extracted content into structured static assets (public/audio/, src/data/content/)
-- [ ] **CONT-06**: Compress audio files to minimize PWA bundle size (64kbps mono MP3)
+- [x] **CONT-03**: Extract flashcard Q&A pairs from all 8 NotebookLM notebooks via MCP tools
+- [x] **CONT-04**: Extract multiple choice quiz questions from all 8 NotebookLM notebooks via MCP tools
+- [x] **CONT-05**: Organize extracted content into structured static assets (public/audio/, src/data/content/)
+- [x] **CONT-06**: Compress audio files to minimize PWA bundle size (64kbps mono MP3)
 
 ### Data Model
 
@@ -126,10 +126,10 @@
 |-------------|-------|--------|
 | CONT-01 | Phase 2 | Complete |
 | CONT-02 | Phase 2 | Complete |
-| CONT-03 | Phase 3 | Pending |
-| CONT-04 | Phase 3 | Pending |
-| CONT-05 | Phase 3 | Pending |
-| CONT-06 | Phase 3 | Pending |
+| CONT-03 | Phase 3 | Complete |
+| CONT-04 | Phase 3 | Complete |
+| CONT-05 | Phase 3 | Complete |
+| CONT-06 | Phase 3 | Complete |
 | DATA-01 | Phase 1 | Complete |
 | DATA-02 | Phase 1 | Complete |
 | DATA-03 | Phase 1 | Complete |
