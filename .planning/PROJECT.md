@@ -30,11 +30,11 @@ Every learning activity is accessible and completable inside the app itself — 
 - ✓ Embedded audio player with speed selector and auto-complete — Phase 2
 - ✓ Image carousel with zoom, keyboard nav, and auto-complete — Phase 2
 - ✓ ActivityPanel content routing (audio → AudioPlayer, deck → DeckViewer) — Phase 2
+- ✓ Interactive flashcard component with flip animation, self-rating, shuffle, auto-complete — Phase 3
+- ✓ Multiple choice quiz component with inline feedback, score screen, auto-complete — Phase 3
+- ✓ Flashcard and quiz content extracted for all 8 modules — Phase 3
 
 ### Active
-
-- [ ] Interactive flashcard component (reveal answer, mark correct/incorrect, track score)
-- [ ] Multiple choice quiz component with scoring
 - [ ] Claude API-powered Teach-Back voice conversation (asks user to explain concepts, evaluates understanding)
 - [ ] All content bundled as static assets for offline-first PWA
 - [ ] Graceful degradation for Teach-Back when offline ("needs connection" message)
