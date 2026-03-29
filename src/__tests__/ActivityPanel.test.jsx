@@ -14,6 +14,9 @@ vi.mock("../components/FlashcardViewer.jsx", () => ({
 vi.mock("../components/QuizViewer.jsx", () => ({
   QuizViewer: () => <div data-testid="quiz-viewer-mock">QuizViewer</div>,
 }))
+vi.mock("../components/TeachBackViewer.jsx", () => ({
+  TeachBackViewer: () => <div data-testid="teach-back-viewer-mock">TeachBackViewer</div>,
+}))
 
 const mockActivity = { id: "audio", label: "Audio Overview", icon: "Headphones" }
 
@@ -63,10 +66,10 @@ describe("ActivityPanel", () => {
     expect(screen.getByTestId("audio-player-mock")).toBeInTheDocument()
   })
 
-  it("renders placeholder for unimplemented activities (teachback) when isOpen is true", () => {
+  it("renders placeholder for unimplemented activities (unknown) when isOpen is true", () => {
     render(
       <ActivityPanel
-        activity={{ id: "teachback", label: "Teach-Back", icon: "MessageCircle" }}
+        activity={{ id: "unknown", label: "Unknown Activity", icon: "HelpCircle" }}
         moduleId="1"
         checked={false}
         isOpen={true}
@@ -141,5 +144,20 @@ describe("ActivityPanel", () => {
     )
     fireEvent.click(screen.getByText("Audio Overview"))
     expect(onComplete).not.toHaveBeenCalled()
+  })
+
+  it("renders TeachBackViewer when activity.id is 'teachback' and isOpen is true (D-23)", () => {
+    render(
+      <ActivityPanel
+        activity={{ id: "teachback", label: "Teach-Back", icon: "MessageCircle" }}
+        moduleId="1"
+        checked={false}
+        isOpen={true}
+        onPanelToggle={vi.fn()}
+        onComplete={vi.fn()}
+        phaseColor="#b07ff5"
+      />
+    )
+    expect(screen.getByTestId("teach-back-viewer-mock")).toBeInTheDocument()
   })
 })

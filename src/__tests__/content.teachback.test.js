@@ -19,9 +19,17 @@ describe("TEACHBACK_PROMPTS", () => {
     })
   })
 
-  it("modules 2-8 are empty arrays", () => {
+  it("modules 2-8 each have 1 or more prompts with prompt and conceptArea strings", () => {
     for (let i = 2; i <= 8; i++) {
-      expect(TEACHBACK_PROMPTS[String(i)]).toEqual([])
+      const prompts = TEACHBACK_PROMPTS[String(i)]
+      expect(Array.isArray(prompts)).toBe(true)
+      expect(prompts.length).toBeGreaterThanOrEqual(1)
+      prompts.forEach((p) => {
+        expect(typeof p.prompt).toBe("string")
+        expect(p.prompt.length).toBeGreaterThan(0)
+        expect(typeof p.conceptArea).toBe("string")
+        expect(p.conceptArea.length).toBeGreaterThan(0)
+      })
     }
   })
 })
