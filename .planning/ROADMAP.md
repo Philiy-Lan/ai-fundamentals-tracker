@@ -68,7 +68,7 @@ Plans:
 
 Plans:
 - [x] 03-01-PLAN.md — Content + test stubs (Wave 1): populate flashcards.js and quizzes.js for all 8 modules; create FlashcardViewer and QuizViewer test stubs in RED state; extend ActivityPanel tests
-- [ ] 03-02-PLAN.md — FlashcardViewer component (Wave 2): card flip animation, self-rating, running score, shuffle, auto-complete
+- [x] 03-02-PLAN.md — FlashcardViewer component (Wave 2): card flip animation, self-rating, running score, shuffle, auto-complete
 - [x] 03-03-PLAN.md — QuizViewer component (Wave 2): MC questions, submit/reveal, correct answer highlight, score screen, auto-complete
 - [ ] 03-04-PLAN.md — ActivityPanel integration (Wave 3): wire FlashcardViewer and QuizViewer into ActivityPanel routing; human end-to-end verification
 
@@ -93,5 +93,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-28 |
 | 2. Audio and Deck | 5/5 | Complete   | 2026-03-29 |
-| 3. Flashcards and Quiz | 2/4 | In Progress|  |
+| 3. Flashcards and Quiz | 3/4 | In Progress|  |
 | 4. Teach-Back | 0/? | Not started | - |
