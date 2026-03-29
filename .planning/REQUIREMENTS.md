@@ -55,12 +55,12 @@
 
 ### Quiz
 
-- [ ] **QUIZ-01**: Multiple choice question display with selectable options
-- [ ] **QUIZ-02**: Submit answer and show correct/incorrect result per question
-- [ ] **QUIZ-03**: Reveal correct answer on wrong selection
-- [ ] **QUIZ-04**: Question progress indicator (e.g., "Q 3 of 10")
-- [ ] **QUIZ-05**: Final score screen with percentage
-- [ ] **QUIZ-06**: Auto-complete activity on quiz finish
+- [x] **QUIZ-01**: Multiple choice question display with selectable options
+- [x] **QUIZ-02**: Submit answer and show correct/incorrect result per question
+- [x] **QUIZ-03**: Reveal correct answer on wrong selection
+- [x] **QUIZ-04**: Question progress indicator (e.g., "Q 3 of 10")
+- [x] **QUIZ-05**: Final score screen with percentage
+- [x] **QUIZ-06**: Auto-complete activity on quiz finish
 
 ### Teach-Back
 
@@ -154,12 +154,12 @@
 | FLASH-04 | Phase 3 | Pending |
 | FLASH-05 | Phase 3 | Pending |
 | FLASH-06 | Phase 3 | Pending |
-| QUIZ-01 | Phase 3 | Pending |
-| QUIZ-02 | Phase 3 | Pending |
-| QUIZ-03 | Phase 3 | Pending |
-| QUIZ-04 | Phase 3 | Pending |
-| QUIZ-05 | Phase 3 | Pending |
-| QUIZ-06 | Phase 3 | Pending |
+| QUIZ-01 | Phase 3 | Complete |
+| QUIZ-02 | Phase 3 | Complete |
+| QUIZ-03 | Phase 3 | Complete |
+| QUIZ-04 | Phase 3 | Complete |
+| QUIZ-05 | Phase 3 | Complete |
+| QUIZ-06 | Phase 3 | Complete |
 | TEACH-01 | Phase 4 | Pending |
 | TEACH-02 | Phase 4 | Pending |
 | TEACH-03 | Phase 4 | Pending |
