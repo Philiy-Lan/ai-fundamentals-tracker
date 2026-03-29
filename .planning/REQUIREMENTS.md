@@ -7,8 +7,8 @@
 
 ### Content Extraction
 
-- [ ] **CONT-01**: Extract audio overview files from all 8 NotebookLM notebooks via MCP tools
-- [ ] **CONT-02**: Extract deck/slide images from all 8 NotebookLM notebooks via MCP tools
+- [x] **CONT-01**: Extract audio overview files from all 8 NotebookLM notebooks via MCP tools
+- [x] **CONT-02**: Extract deck/slide images from all 8 NotebookLM notebooks via MCP tools
 - [ ] **CONT-03**: Extract flashcard Q&A pairs from all 8 NotebookLM notebooks via MCP tools
 - [ ] **CONT-04**: Extract multiple choice quiz questions from all 8 NotebookLM notebooks via MCP tools
 - [ ] **CONT-05**: Organize extracted content into structured static assets (public/audio/, src/data/content/)
@@ -124,8 +124,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CONT-01 | Phase 2 | Pending |
-| CONT-02 | Phase 2 | Pending |
+| CONT-01 | Phase 2 | Complete |
+| CONT-02 | Phase 2 | Complete |
 | CONT-03 | Phase 3 | Pending |
 | CONT-04 | Phase 3 | Pending |
 | CONT-05 | Phase 3 | Pending |
