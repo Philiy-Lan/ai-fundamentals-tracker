@@ -26,12 +26,13 @@ Every learning activity is accessible and completable inside the app itself — 
 - ✓ Content data structures scaffolded (flashcards, quizzes, teach-back) — Phase 1
 - ✓ Service worker updated with Workbox runtimeCaching for audio (CacheFirst) — Phase 1
 - ✓ Data migration (mindmap → deck) with sync protection — Phase 1
+- ✓ Extract content from 8 NotebookLM notebooks (audio + deck) via MCP tools — Phase 2
+- ✓ Embedded audio player with speed selector and auto-complete — Phase 2
+- ✓ Image carousel with zoom, keyboard nav, and auto-complete — Phase 2
+- ✓ ActivityPanel content routing (audio → AudioPlayer, deck → DeckViewer) — Phase 2
 
 ### Active
 
-- [ ] Extract content from 8 NotebookLM notebooks (one per module) via MCP tools
-- [ ] Embedded audio player for Audio Overview activities (bundled audio files)
-- [ ] Image carousel for Deck activities (replacing Mind Map, bundled deck images)
 - [ ] Interactive flashcard component (reveal answer, mark correct/incorrect, track score)
 - [ ] Multiple choice quiz component with scoring
 - [ ] Claude API-powered Teach-Back voice conversation (asks user to explain concepts, evaluates understanding)
