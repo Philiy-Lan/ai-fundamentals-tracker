@@ -8,7 +8,7 @@ export function DeckViewer({ moduleId, slideCount, onComplete }) {
   // Build slide URLs from moduleId and slideCount — no fetch needed
   const slides = Array.from(
     { length: slideCount },
-    (_, i) => `/decks/${moduleId}/slide-${i + 1}.png`
+    (_, i) => `/decks/${moduleId}/slide-${i + 1}.jpg`
   )
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "start", containScroll: "trimSnaps" })

@@ -12,7 +12,7 @@ export const MODULES = [
     week: "Week 1",
     emoji: "\u{1F916}",
     description: "History, types, and landscape of artificial intelligence",
-    deckSlideCount: 3,
+    deckSlideCount: 18,
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
       { id: "deck", label: "Deck", icon: "Images" },
@@ -28,7 +28,7 @@ export const MODULES = [
     week: "Week 1-2",
     emoji: "\u{1F4CA}",
     description: "Supervised, unsupervised, and reinforcement learning",
-    deckSlideCount: 3,
+    deckSlideCount: 20,
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
       { id: "deck", label: "Deck", icon: "Images" },
@@ -44,7 +44,7 @@ export const MODULES = [
     week: "Week 2",
     emoji: "\u{1F9E0}",
     description: "Neural network architectures and training fundamentals",
-    deckSlideCount: 3,
+    deckSlideCount: 16,
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
       { id: "deck", label: "Deck", icon: "Images" },
@@ -60,7 +60,7 @@ export const MODULES = [
     week: "Week 3",
     emoji: "\u{1F4AC}",
     description: "Transformers, GPT architecture, prompting strategies",
-    deckSlideCount: 3,
+    deckSlideCount: 15,
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
       { id: "deck", label: "Deck", icon: "Images" },
@@ -76,7 +76,7 @@ export const MODULES = [
     week: "Week 3-4",
     emoji: "\u{1F4DD}",
     description: "Text processing, embeddings, sentiment analysis",
-    deckSlideCount: 3,
+    deckSlideCount: 15,
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
       { id: "deck", label: "Deck", icon: "Images" },
@@ -92,7 +92,7 @@ export const MODULES = [
     week: "Week 4",
     emoji: "\u{1F50D}",
     description: "Retrieval-augmented generation, vector databases, knowledge graphs",
-    deckSlideCount: 3,
+    deckSlideCount: 15,
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
       { id: "deck", label: "Deck", icon: "Images" },
