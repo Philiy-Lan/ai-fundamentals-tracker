@@ -135,5 +135,3 @@ export const MODULES = [
   },
 ];
 
-export const NOTEBOOK_ID = "72cf9d0c-05b7-48ad-94ff-c12f20f2a6c1";
-export const NOTEBOOK_BASE_URL = "https://notebooklm.google.com/notebook";

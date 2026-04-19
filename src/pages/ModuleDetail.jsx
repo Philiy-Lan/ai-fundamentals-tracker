@@ -4,7 +4,6 @@ import { ArrowLeft } from "lucide-react";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { MODULES, PHASES } from "../data/modules";
 import { ActivityPanel } from "../components/ActivityPanel";
-import { NotebookLMButton } from "../components/NotebookLMButton";
 import { CelebrationOverlay } from "../components/CelebrationOverlay";
 import { ModuleComplete } from "../components/ModuleComplete";
 import { getRandomEncouragement } from "../utils/encouragements";
@@ -221,11 +220,6 @@ export function ModuleDetail({ progress }) {
               />
             ))}
           </div>
-        </div>
-
-        {/* NotebookLM */}
-        <div className="px-5 pb-5">
-          <NotebookLMButton />
         </div>
 
         {/* Notes */}
