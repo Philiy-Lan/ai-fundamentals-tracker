@@ -81,7 +81,7 @@ Each task was committed atomically:
 1. **Task 1: Populate teachback prompts + create API route + install SDK** - `c38a5ea` (feat)
 2. **Task 2: Create TeachBackViewer test stubs (RED) + extend ActivityPanel test** - `fd559cf` (test)
 
-**Plan metadata:** (pending final commit)
+**Plan metadata:** `e8d3a91` (docs: complete plan)
 
 ## Files Created/Modified
 
@@ -129,6 +129,18 @@ None beyond the planned RED state for Task 2 tests.
 ## Known Stubs
 
 None — api/evaluate.js is fully implemented. TEACHBACK_PROMPTS is fully populated. Test files are stubs by design (RED state is the goal for this plan).
+
+## Self-Check: PASSED
+
+- FOUND: src/data/content/teachback.js
+- FOUND: api/evaluate.js
+- FOUND: src/__tests__/TeachBackViewer.test.jsx
+- FOUND: src/__tests__/ActivityPanel.test.jsx
+- FOUND: src/__tests__/content.teachback.test.js
+- FOUND: .planning/phases/04-teach-back/04-01-SUMMARY.md
+- FOUND commit: c38a5ea
+- FOUND commit: fd559cf
+- FOUND commit: e8d3a91
 
 ---
 
