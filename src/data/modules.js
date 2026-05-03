@@ -108,7 +108,7 @@ export const MODULES = [
     week: "Week 5",
     emoji: "\u{1F6E0}\u{FE0F}",
     description: "Autonomous agents, tool use, Model Context Protocol",
-    deckSlideCount: 3,
+    deckSlideCount: 15,
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
       { id: "deck", label: "Deck", icon: "Images" },
@@ -124,7 +124,7 @@ export const MODULES = [
     week: "Week 5-6",
     emoji: "\u{1F310}",
     description: "System design, responsible AI, emerging frontiers",
-    deckSlideCount: 3,
+    deckSlideCount: 13,
     activities: [
       { id: "audio", label: "Audio Overview", icon: "Headphones" },
       { id: "deck", label: "Deck", icon: "Images" },
