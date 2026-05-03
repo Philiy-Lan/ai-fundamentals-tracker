@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
   try {
     const message = await client.messages.create({
-      model: "claude-haiku-4-5",
+      model: "claude-haiku-4-5-20251001",
       max_tokens: 512,
       system: SYSTEM_PROMPT,
       messages: [
@@ -41,12 +41,13 @@ export default async function handler(req, res) {
     })
 
     const raw = message.content[0].text
-    // Defensive: strip any text before first `{`
+    // Defensive: extract only the JSON object
     const jsonStart = raw.indexOf("{")
-    const parsed = JSON.parse(jsonStart >= 0 ? raw.slice(jsonStart) : raw)
+    const jsonEnd = raw.lastIndexOf("}")
+    const parsed = JSON.parse(raw.slice(jsonStart, jsonEnd + 1))
 
     return res.status(200).json(parsed)
-  } catch (_) {
+  } catch (err) {
     return res.status(500).json({ error: "Evaluation failed" })
   }
 }

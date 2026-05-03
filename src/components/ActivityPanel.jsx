@@ -4,6 +4,7 @@ import { AudioPlayer } from "./AudioPlayer"
 import { DeckViewer } from "./DeckViewer"
 import { FlashcardViewer } from "./FlashcardViewer"
 import { QuizViewer } from "./QuizViewer"
+import { TeachBackViewer } from "./TeachBackViewer"
 import { MODULES } from "../data/modules"
 
 function renderContent(activity, moduleId, onComplete) {
@@ -25,6 +26,8 @@ function renderContent(activity, moduleId, onComplete) {
       return <FlashcardViewer moduleId={moduleId} onComplete={onComplete} />
     case "quiz":
       return <QuizViewer moduleId={moduleId} onComplete={onComplete} />
+    case "teachback":
+      return <TeachBackViewer moduleId={moduleId} onComplete={onComplete} />
     default:
       return (
         <p className="text-center py-4">
