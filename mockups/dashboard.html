@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watercolour Diary · Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page-bg: #f4ede4;
+    --ink: #2a1810;
+    --rose: #c2548a;
+    --rose-soft: #ffd6e8;
+    --lavender: #c4b8ff;
+    --lavender-soft: #e0d4ff;
+    --honey: #ffb86b;
+    --honey-soft: #ffe0b8;
+    --sage: #a8c4a0;
+    --sage-soft: #d4e8c8;
+    --sky: #b8d4ff;
+    --sky-soft: #d4e8ff;
+    --mocha: #8a6a4f;
+
+    /* Phase tints — soft, watercolour */
+    --phase-1: #b07ff5;     /* foundations */
+    --phase-1-soft: #e0d4ff;
+    --phase-2: #e8863a;     /* practitioner */
+    --phase-2-soft: #ffe0b8;
+    --phase-3: #e06298;     /* advanced */
+    --phase-3-soft: #ffd6e8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: 'Geist', sans-serif;
+    background: var(--page-bg);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 60px 20px 80px;
+    background-image:
+      radial-gradient(circle at 15% 5%, rgba(255, 200, 220, 0.2), transparent 35%),
+      radial-gradient(circle at 85% 95%, rgba(200, 220, 255, 0.2), transparent 40%);
+  }
+
+  .page-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 56px;
+  }
+  .page-header .eyebrow {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(42, 24, 16, 0.55);
+    margin-bottom: 16px;
+  }
+  .page-header h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 42px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .page-header h1 em {
+    font-style: italic;
+    font-variation-settings: 'opsz' 144;
+    color: var(--rose);
+  }
+  .page-header p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(42, 24, 16, 0.7);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .mockups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 60px 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+    justify-items: center;
+  }
+  .mockup-column { display: flex; flex-direction: column; align-items: center; }
+
+  .screen-label { text-align: center; margin-bottom: 22px; max-width: 320px; }
+  .screen-label .num {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--rose);
+    margin-bottom: 2px;
+  }
+  .screen-label h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .screen-label p {
+    font-size: 12px;
+    color: rgba(42, 24, 16, 0.6);
+    line-height: 1.5;
+  }
+
+  /* Phone frame */
+  .phone {
+    width: 360px;
+    height: 780px;
+    border-radius: 52px;
+    padding: 12px;
+    position: relative;
+    background: #0a0a0a;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.08) inset,
+      0 0 0 2px #1f1f1f,
+      0 30px 60px -20px rgba(0,0,0,0.35),
+      0 50px 100px -40px rgba(0,0,0,0.25);
+  }
+  .phone::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 32px;
+    background: #000;
+    border-radius: 20px;
+    z-index: 10;
+  }
+  .screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 42px;
+    overflow: hidden;
+    position: relative;
+    background:
+      radial-gradient(ellipse at 20% 5%, #ffd6e8 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 25%, #d4e4ff 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 95%, #ffe8d4 0%, transparent 55%),
+      radial-gradient(ellipse at 10% 70%, #e0d4ff 0%, transparent 50%),
+      #fdf8f3;
+  }
+  .screen::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0 0.1 0 0 0 0 0.4 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.4'/></svg>");
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .status-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    padding: 18px 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 5;
+    color: #2a1810;
+  }
+  .status-bar .right { display: flex; gap: 5px; align-items: center; }
+  .sb-signal { width: 18px; height: 11px; }
+  .sb-wifi { width: 16px; height: 11px; }
+  .sb-batt { width: 26px; height: 12px; }
+
+  .content {
+    position: relative;
+    height: 100%;
+    padding: 60px 22px 22px;
+    z-index: 2;
+    overflow-y: auto;
+  }
+  .content::-webkit-scrollbar { display: none; }
+
+  /* ===== APP HEADER ===== */
+  .app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  .app-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .app-title em {
+    font-style: italic;
+    font-variation-settings: 'opsz' 144;
+    color: var(--rose);
+  }
+  .header-actions { display: flex; gap: 10px; align-items: center; }
+  .icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mocha);
+  }
+  .sync-dot { color: var(--sage); }
+
+  .greeting {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--mocha);
+    margin-bottom: 18px;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+
+  /* ===== HERO RING ===== */
+  .hero {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 28px;
+    padding: 24px 22px 22px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 22px -10px rgba(180, 140, 180, 0.22);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255, 200, 220, 0.45) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-row { display: flex; align-items: center; gap: 18px; position: relative; z-index: 2; }
+  .ring {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .ring svg { transform: rotate(-90deg); }
+  .ring-percent {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .ring-percent .num {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .ring-percent .num em {
+    font-style: italic;
+    color: var(--rose);
+    font-variation-settings: 'opsz' 144;
+  }
+  .ring-percent .lbl {
+    font-family: 'Geist Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(42, 24, 16, 0.55);
+    margin-top: 4px;
+  }
+  .hero-meta { flex: 1; }
+  .hero-meta .top {
+    font-family: 'Geist Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(42, 24, 16, 0.55);
+    margin-bottom: 6px;
+  }
+  .hero-meta .stat {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .hero-meta .stat strong {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--rose);
+  }
+  .hero-note {
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--mocha);
+    line-height: 1.2;
+  }
+
+  /* ===== STREAK STRIP ===== */
+  .streak {
+    background: linear-gradient(135deg, rgba(255, 224, 184, 0.7), rgba(255, 184, 107, 0.4));
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 22px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 12px -6px rgba(220, 150, 80, 0.2);
+  }
+  .streak-flame {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffb86b, #e8863a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px -3px rgba(232, 134, 58, 0.4);
+  }
+  .streak-text { flex: 1; }
+  .streak-text .day {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.1;
+    color: #5a3010;
+    letter-spacing: -0.01em;
+  }
+  .streak-text .day strong {
+    font-style: normal;
+    font-weight: 600;
+    color: #8a4a10;
+  }
+  .streak-text .sub {
+    font-family: 'Caveat', cursive;
+    font-size: 14px;
+    color: #8a4a10;
+    margin-top: 1px;
+  }
+  .streak-best {
+    font-family: 'Geist Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8a4a10;
+    text-align: right;
+  }
+  .streak-best .n {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: #5a3010;
+    text-transform: none;
+    line-height: 1;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ===== PHASE CHAPTER ===== */
+  .chapter { margin-bottom: 22px; }
+  .chapter-head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 0 4px;
+    margin-bottom: 10px;
+  }
+  .chapter-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--mocha);
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+  .chapter-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .chapter-title em {
+    font-style: italic;
+    font-variation-settings: 'opsz' 144;
+  }
+  .phase-1 .chapter-title em { color: var(--phase-1); }
+  .phase-2 .chapter-title em { color: var(--phase-2); }
+  .phase-3 .chapter-title em { color: var(--phase-3); }
+  .chapter-weeks {
+    margin-left: auto;
+    font-family: 'Geist Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(42, 24, 16, 0.55);
+  }
+  .chapter-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 4px;
+    margin-bottom: 10px;
+  }
+  .chapter-pebbles {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+  }
+  .chapter-pebbles .pip {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .phase-1 .chapter-pebbles .pip.done { background: linear-gradient(90deg, var(--phase-1-soft), var(--phase-1)); border-color: transparent; }
+  .phase-2 .chapter-pebbles .pip.done { background: linear-gradient(90deg, var(--phase-2-soft), var(--phase-2)); border-color: transparent; }
+  .phase-3 .chapter-pebbles .pip.done { background: linear-gradient(90deg, var(--phase-3-soft), var(--phase-3)); border-color: transparent; }
+  .chapter-count {
+    font-family: 'Caveat', cursive;
+    font-size: 14px;
+    color: var(--mocha);
+    white-space: nowrap;
+  }
+
+  /* ===== MODULE CARD ===== */
+  .mod {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 22px;
+    padding: 14px 14px 14px 12px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px -6px rgba(180, 140, 180, 0.15);
+    position: relative;
+    transition: all 0.2s;
+  }
+  .mod.next {
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0 8px 22px -10px rgba(194, 84, 138, 0.28);
+    border-color: rgba(255, 200, 220, 0.7);
+  }
+  .mod.done { opacity: 0.7; }
+  .mod-emoji {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    box-shadow: 0 3px 8px -3px rgba(180, 140, 200, 0.35);
+  }
+  .phase-1 .mod-emoji { background: linear-gradient(135deg, var(--phase-1-soft), var(--phase-1)); }
+  .phase-2 .mod-emoji { background: linear-gradient(135deg, var(--phase-2-soft), var(--phase-2)); }
+  .phase-3 .mod-emoji { background: linear-gradient(135deg, var(--phase-3-soft), var(--phase-3)); }
+  .mod-body { flex: 1; min-width: 0; }
+  .mod-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .mod-title em { font-style: italic; }
+  .phase-1 .mod-title em { color: var(--phase-1); }
+  .phase-2 .mod-title em { color: var(--phase-2); }
+  .phase-3 .mod-title em { color: var(--phase-3); }
+  .mod-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mod-week {
+    font-family: 'Caveat', cursive;
+    font-size: 13px;
+    color: var(--mocha);
+  }
+  .mod-dots {
+    display: flex;
+    gap: 3px;
+  }
+  .mod-dots .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(42, 24, 16, 0.12);
+  }
+  .mod-dots .dot.audio.on { background: var(--sky); border-color: transparent; }
+  .mod-dots .dot.deck.on  { background: var(--honey); border-color: transparent; }
+  .mod-dots .dot.cards.on { background: var(--lavender); border-color: transparent; }
+  .mod-dots .dot.quiz.on  { background: var(--sage); border-color: transparent; }
+  .mod-dots .dot.teach.on { background: var(--rose); border-color: transparent; }
+  .mod-end { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
+  .mod-marker {
+    font-family: 'Caveat', cursive;
+    font-size: 13px;
+    color: var(--rose);
+    line-height: 1;
+  }
+  .mod-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffb8d4, #c2548a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(194, 84, 138, 0.3);
+  }
+  .mod-arrow {
+    color: var(--rose);
+    transform: translateY(1px);
+  }
+
+  /* Bottom note */
+  .footer-note {
+    text-align: center;
+    margin-top: 8px;
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--mocha);
+    opacity: 0.8;
+  }
+
+  @media (max-width: 1100px) {
+    .mockups-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="eyebrow">WATERCOLOUR DIARY · DASHBOARD</div>
+  <h1>The <em>home</em> view</h1>
+  <p>The first thing you see each day. Progress at a glance, a streak that keeps you company, and your eight modules laid out as chapters of a study journal.</p>
+</header>
+
+<main class="mockups-grid">
+
+  <!-- ============================================ -->
+  <!-- SCREEN A: EARLY PROGRESS                      -->
+  <!-- ============================================ -->
+  <div class="mockup-column">
+    <div class="screen-label">
+      <div class="num">~ early days</div>
+      <h2>Just getting started</h2>
+      <p>Day three. One module under your belt, the next gently calling.</p>
+    </div>
+    <div class="phone">
+      <div class="screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="right">
+            <svg class="sb-signal" viewBox="0 0 18 11" fill="currentColor"><rect x="0" y="6" width="3" height="5" rx="0.5"/><rect x="5" y="4" width="3" height="7" rx="0.5"/><rect x="10" y="2" width="3" height="9" rx="0.5"/><rect x="15" y="0" width="3" height="11" rx="0.5"/></svg>
+            <svg class="sb-wifi" viewBox="0 0 16 11" fill="currentColor"><path d="M8 2.5C5.5 2.5 3.3 3.5 1.7 5.1L0 3.4C2 1.3 4.9 0 8 0s6 1.3 8 3.4l-1.7 1.7C12.7 3.5 10.5 2.5 8 2.5z"/></svg>
+            <svg class="sb-batt" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="2.5" stroke="currentColor" opacity="0.5"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="1.5" height="4" rx="0.5" fill="currentColor" opacity="0.5"/></svg>
+          </div>
+        </div>
+
+        <div class="content">
+
+          <!-- App header -->
+          <div class="app-header">
+            <div class="app-title">AI <em>Fundamentals</em></div>
+            <div class="header-actions">
+              <div class="icon-btn sync-dot" title="synced">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17.5 19a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 1-4.5-4.5 4.5 4.5 0 0 0-9 0 4.5 4.5 0 0 0 4.5 4.5"/></svg>
+              </div>
+              <div class="icon-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="greeting">good morning, friend ~</div>
+
+          <!-- Hero ring + meta -->
+          <div class="hero">
+            <div class="hero-row">
+              <div class="ring">
+                <svg width="110" height="110" viewBox="0 0 110 110">
+                  <defs>
+                    <linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffb8d4"/>
+                      <stop offset="100%" stop-color="#c2548a"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="55" cy="55" r="46" fill="none" stroke="rgba(194, 84, 138, 0.12)" stroke-width="9"/>
+                  <circle cx="55" cy="55" r="46"
+                          fill="none"
+                          stroke="url(#ringGrad1)"
+                          stroke-width="9"
+                          stroke-linecap="round"
+                          stroke-dasharray="289"
+                          stroke-dashoffset="252"/>
+                </svg>
+                <div class="ring-percent">
+                  <div class="num"><em>13</em>%</div>
+                  <div class="lbl">overall</div>
+                </div>
+              </div>
+              <div class="hero-meta">
+                <div class="top">YOUR PROGRESS</div>
+                <div class="stat"><strong>5</strong> of 40 activities done</div>
+                <div class="hero-note">a little each day, that's the trick ✦</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Streak -->
+          <div class="streak">
+            <div class="streak-flame">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
+            </div>
+            <div class="streak-text">
+              <div class="day"><strong>day 3</strong> ~ on a roll</div>
+              <div class="sub">don't break the chain ✦</div>
+            </div>
+            <div class="streak-best">BEST<span class="n">7</span></div>
+          </div>
+
+          <!-- Phase 1 chapter -->
+          <div class="chapter phase-1">
+            <div class="chapter-head">
+              <span class="chapter-eyebrow">chapter one ~</span>
+              <span class="chapter-title"><em>foundations</em></span>
+              <span class="chapter-weeks">WK 1–3</span>
+            </div>
+            <div class="chapter-progress">
+              <div class="chapter-pebbles">
+                <span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span>
+                <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+                <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+              </div>
+              <span class="chapter-count">5 / 15</span>
+            </div>
+
+            <div class="mod done">
+              <div class="mod-emoji">🤖</div>
+              <div class="mod-body">
+                <div class="mod-title">What is <em>AI</em>?</div>
+                <div class="mod-meta">
+                  <span class="mod-week">~ week 1</span>
+                  <div class="mod-dots">
+                    <span class="dot audio on"></span>
+                    <span class="dot deck on"></span>
+                    <span class="dot cards on"></span>
+                    <span class="dot quiz on"></span>
+                    <span class="dot teach on"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="mod-end">
+                <div class="mod-check">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod next">
+              <div class="mod-emoji">🧠</div>
+              <div class="mod-body">
+                <div class="mod-title">How models <em>think</em></div>
+                <div class="mod-meta">
+                  <span class="mod-week">~ week 2</span>
+                  <div class="mod-dots">
+                    <span class="dot audio"></span>
+                    <span class="dot deck"></span>
+                    <span class="dot cards"></span>
+                    <span class="dot quiz"></span>
+                    <span class="dot teach"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="mod-end">
+                <div class="mod-marker">begin ↓</div>
+                <svg class="mod-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <div class="mod">
+              <div class="mod-emoji">💬</div>
+              <div class="mod-body">
+                <div class="mod-title">Prompting <em>basics</em></div>
+                <div class="mod-meta">
+                  <span class="mod-week">~ week 3</span>
+                  <div class="mod-dots">
+                    <span class="dot audio"></span>
+                    <span class="dot deck"></span>
+                    <span class="dot cards"></span>
+                    <span class="dot quiz"></span>
+                    <span class="dot teach"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 2 chapter -->
+          <div class="chapter phase-2">
+            <div class="chapter-head">
+              <span class="chapter-eyebrow">chapter two ~</span>
+              <span class="chapter-title"><em>practitioner</em></span>
+              <span class="chapter-weeks">WK 4–6</span>
+            </div>
+            <div class="chapter-progress">
+              <div class="chapter-pebbles">
+                <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+                <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+                <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+              </div>
+              <span class="chapter-count">0 / 15</span>
+            </div>
+            <div class="mod">
+              <div class="mod-emoji">🛠️</div>
+              <div class="mod-body">
+                <div class="mod-title">Tools & <em>workflows</em></div>
+                <div class="mod-meta">
+                  <span class="mod-week">~ week 4</span>
+                  <div class="mod-dots">
+                    <span class="dot audio"></span>
+                    <span class="dot deck"></span>
+                    <span class="dot cards"></span>
+                    <span class="dot quiz"></span>
+                    <span class="dot teach"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mod">
+              <div class="mod-emoji">🔌</div>
+              <div class="mod-body">
+                <div class="mod-title">APIs & <em>agents</em></div>
+                <div class="mod-meta">
+                  <span class="mod-week">~ week 5</span>
+                  <div class="mod-dots">
+                    <span class="dot audio"></span>
+                    <span class="dot deck"></span>
+                    <span class="dot cards"></span>
+                    <span class="dot quiz"></span>
+                    <span class="dot teach"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-note">8 modules · 40 little wins ✦</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SCREEN B: WELL UNDERWAY                       -->
+  <!-- ============================================ -->
+  <div class="mockup-column">
+    <div class="screen-label">
+      <div class="num">~ midway</div>
+      <h2>Well underway</h2>
+      <p>Day twelve. Foundations are home. Practitioner is in motion.</p>
+    </div>
+    <div class="phone">
+      <div class="screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="right">
+            <svg class="sb-signal" viewBox="0 0 18 11" fill="currentColor"><rect x="0" y="6" width="3" height="5" rx="0.5"/><rect x="5" y="4" width="3" height="7" rx="0.5"/><rect x="10" y="2" width="3" height="9" rx="0.5"/><rect x="15" y="0" width="3" height="11" rx="0.5"/></svg>
+            <svg class="sb-wifi" viewBox="0 0 16 11" fill="currentColor"><path d="M8 2.5C5.5 2.5 3.3 3.5 1.7 5.1L0 3.4C2 1.3 4.9 0 8 0s6 1.3 8 3.4l-1.7 1.7C12.7 3.5 10.5 2.5 8 2.5z"/></svg>
+            <svg class="sb-batt" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="2.5" stroke="currentColor" opacity="0.5"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="1.5" height="4" rx="0.5" fill="currentColor" opacity="0.5"/></svg>
+          </div>
+        </div>
+
+        <div class="content">
+
+          <div class="app-header">
+            <div class="app-title">AI <em>Fundamentals</em></div>
+            <div class="header-actions">
+              <div class="icon-btn sync-dot">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17.5 19a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 1-4.5-4.5 4.5 4.5 0 0 0-9 0 4.5 4.5 0 0 0 4.5 4.5"/></svg>
+              </div>
+              <div class="icon-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="greeting">welcome back ~</div>
+
+          <div class="hero">
+            <div class="hero-row">
+              <div class="ring">
+                <svg width="110" height="110" viewBox="0 0 110 110">
+                  <defs>
+                    <linearGradient id="ringGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffb8d4"/>
+                      <stop offset="100%" stop-color="#c2548a"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="55" cy="55" r="46" fill="none" stroke="rgba(194, 84, 138, 0.12)" stroke-width="9"/>
+                  <circle cx="55" cy="55" r="46"
+                          fill="none"
+                          stroke="url(#ringGrad2)"
+                          stroke-width="9"
+                          stroke-linecap="round"
+                          stroke-dasharray="289"
+                          stroke-dashoffset="115"/>
+                </svg>
+                <div class="ring-percent">
+                  <div class="num"><em>60</em>%</div>
+                  <div class="lbl">overall</div>
+                </div>
+              </div>
+              <div class="hero-meta">
+                <div class="top">YOUR PROGRESS</div>
+                <div class="stat"><strong>24</strong> of 40 done — over halfway</div>
+                <div class="hero-note">past the halfway mark, well done ✦</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="streak">
+            <div class="streak-flame">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
+            </div>
+            <div class="streak-text">
+              <div class="day"><strong>day 12</strong> ~ keep it going</div>
+              <div class="sub">your longest yet ✦</div>
+            </div>
+            <div class="streak-best">BEST<span class="n">12</span></div>
+          </div>
+
+          <div class="chapter phase-1">
+            <div class="chapter-head">
+              <span class="chapter-eyebrow">chapter one ~</span>
+              <span class="chapter-title"><em>foundations</em></span>
+              <span class="chapter-weeks">15 / 15 ✦</span>
+            </div>
+            <div class="chapter-progress">
+              <div class="chapter-pebbles">
+                <span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span>
+                <span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span>
+                <span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span>
+              </div>
+              <span class="chapter-count">complete</span>
+            </div>
+          </div>
+
+          <div class="chapter phase-2">
+            <div class="chapter-head">
+              <span class="chapter-eyebrow">chapter two ~</span>
+              <span class="chapter-title"><em>practitioner</em></span>
+              <span class="chapter-weeks">WK 4–6</span>
+            </div>
+            <div class="chapter-progress">
+              <div class="chapter-pebbles">
+                <span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span>
+                <span class="pip done"></span><span class="pip done"></span><span class="pip done"></span><span class="pip done"></span>
+                <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+              </div>
+              <span class="chapter-count">9 / 15</span>
+            </div>
+            <div class="mod done">
+              <div class="mod-emoji">🛠️</div>
+              <div class="mod-body">
+                <div class="mod-title">Tools & <em>workflows</em></div>
+                <div class="mod-meta">
+                  <span class="mod-week">~ week 4</span>
+                  <div class="mod-dots">
+                    <span class="dot audio on"></span><span class="dot deck on"></span><span class="dot cards on"></span><span class="dot quiz on"></span><span class="dot teach on"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="mod-end">
+                <div class="mod-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+            </div>
+            <div class="mod next">
+              <div class="mod-emoji">🔌</div>
+              <div class="mod-body">
+                <div class="mod-title">APIs & <em>agents</em></div>
+                <div class="mod-meta">
+                  <span class="mod-week">~ week 5</span>
+                  <div class="mod-dots">
+                    <span class="dot audio on"></span><span class="dot deck on"></span><span class="dot cards on"></span><span class="dot quiz on"></span><span class="dot teach"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="mod-end">
+                <div class="mod-marker">continue ↓</div>
+                <svg class="mod-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+            <div class="mod">
+              <div class="mod-emoji">📈</div>
+              <div class="mod-body">
+                <div class="mod-title">Eval & <em>iteration</em></div>
+                <div class="mod-meta">
+                  <span class="mod-week">~ week 6</span>
+                  <div class="mod-dots">
+                    <span class="dot audio"></span><span class="dot deck"></span><span class="dot cards"></span><span class="dot quiz"></span><span class="dot teach"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter phase-3">
+            <div class="chapter-head">
+              <span class="chapter-eyebrow">chapter three ~</span>
+              <span class="chapter-title"><em>advanced</em></span>
+              <span class="chapter-weeks">WK 7–8</span>
+            </div>
+            <div class="chapter-progress">
+              <div class="chapter-pebbles">
+                <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+                <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+              </div>
+              <span class="chapter-count">0 / 10</span>
+            </div>
+            <div class="mod">
+              <div class="mod-emoji">🧬</div>
+              <div class="mod-body">
+                <div class="mod-title">Fine-tuning <em>& RAG</em></div>
+                <div class="mod-meta">
+                  <span class="mod-week">~ week 7</span>
+                  <div class="mod-dots">
+                    <span class="dot audio"></span><span class="dot deck"></span><span class="dot cards"></span><span class="dot quiz"></span><span class="dot teach"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-note">keep going ~ you're closer than you think ✦</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
